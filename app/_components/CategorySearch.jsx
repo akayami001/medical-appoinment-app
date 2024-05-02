@@ -21,7 +21,7 @@ const CategorySearch = () => {
         </Button>
       </div>
 
-      <div className="grid grid-cols-3  ">
+      <div className="grid grid-cols-1 md:grid-cols-3  ">
         {data.map((item) => (
           <div
             key={item.id}
@@ -31,7 +31,7 @@ const CategorySearch = () => {
               src={item.url}
               alt="icon"
               width={70}
-              height={60}
+              height={70}
               className="bg-blue-50"
             />
             <label className="text-blue-600 text-sm"> {item.name}</label>
