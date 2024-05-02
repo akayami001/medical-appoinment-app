@@ -34,7 +34,7 @@ const Header = () => {
                   className="text-gray-500 transition hover:text-primary"
                   href="/about"
                 >
-                  About
+                  About Us
                 </a>
               </li>
 
