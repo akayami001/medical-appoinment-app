@@ -106,7 +106,7 @@ const About = () => {
                 realizing their goals. We love how each new customer adds to our
                 culture. We enable our company partners to provide fresh
                 viewpoints and cutting-edge methods to their services, and we
-                consistently assess our clients' reasonable expectations.
+                consistently assess our clients reasonable expectations.
               </p>
             </div>
           </div>
