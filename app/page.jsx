@@ -4,9 +4,9 @@ import CategorySearch from "./_components/CategorySearch";
 
 export default function Home() {
   return (
- <div>
-  <Hero/>
-  <CategorySearch/>
- </div>
+    <div>
+      <Hero />
+      <CategorySearch />
+    </div>
   );
 }
