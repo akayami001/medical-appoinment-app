@@ -2,6 +2,7 @@ import { AtSign, MapPin, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import GoogleMap from "../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -10,17 +11,19 @@ const page = () => {
         Contact<b> Information</b>
       </div>
 
-      <section className="bg-white lg:mx-80">
+      <section className="bg-white lg:mx-40">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-            <img
-              alt=""
-              src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-              className="absolute inset-0 h-full w-full object-cover opacity-80"
+            <Image
+              alt="hospital-call"
+              height="564"
+              width="846"
+              src="/call.jpg"
+              className="absolute inset-0 h-full w-full object-cover opacity-40"
             />
 
             <div className="hidden lg:relative lg:block lg:p-12">
-              <a className="block text-white" href="#">
+              <Link className="block text-white" href="/">
                 <span className="sr-only">Home</span>
                 <svg
                   className="h-8 sm:h-10"
@@ -33,7 +36,7 @@ const page = () => {
                     fill="currentColor"
                   />
                 </svg>
-              </a>
+              </Link>
 
               <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
                 Welcome to Health Services 🩺
@@ -43,15 +46,32 @@ const page = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
               </p>
+              <p>
+                <div className="mt-4 leading-relaxed text-white/90">
+                  <a className="flex" href="tel:+">
+                    <MapPin className="mr-1" /> Address will come here
+                  </a>
+                </div>
+                <div className="mt-4 leading-relaxed text-white/90">
+                  <a className="flex" href="tel:+">
+                    <PhoneCall className="mr-1" /> 01234 5678
+                  </a>
+                </div>
+                <div className="mt-4 leading-relaxed text-white/90">
+                  <a className="flex" href="mailto:">
+                    <AtSign className="mr-1" /> mail@yopmail.com
+                  </a>
+                </div>
+              </p>
             </div>
           </section>
 
           <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
             <div className="max-w-xl lg:max-w-3xl">
               <div className="relative -mt-16 block lg:hidden">
-                <a
+                <Link
                   className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
-                  href="#"
+                  href="/"
                 >
                   <span className="sr-only">Home</span>
                   <svg
@@ -65,7 +85,7 @@ const page = () => {
                       fill="currentColor"
                     />
                   </svg>
-                </a>
+                </Link>
 
                 <h1 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
                   Welcome to Health Services 🩺
