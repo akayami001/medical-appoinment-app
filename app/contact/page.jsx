@@ -7,7 +7,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <div className="h-full">
-      <div className="text-center text-4xl text-bold py-20 max-lg:py-0 text-black">
+      <div className="text-center text-4xl font-bold py-20 max-lg:py-0 text-black">
         Contact<b> Information</b>
       </div>
 
@@ -46,7 +46,7 @@ const page = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi nam dolorum aliquam, quibusdam aperiam voluptatum.
               </p>
-              <p>
+              <div>
                 <div className="mt-4 leading-relaxed text-white/90">
                   <a className="flex" href="tel:+">
                     <MapPin className="mr-1" /> Address will come here
@@ -62,7 +62,7 @@ const page = () => {
                     <AtSign className="mr-1" /> mail@yopmail.com
                   </a>
                 </div>
-              </p>
+              </div>
             </div>
           </section>
 
@@ -218,7 +218,7 @@ const page = () => {
           </main>
         </div>
       </section>
-      <div className="">
+      <div>
         <GoogleMap />
       </div>
     </div>
