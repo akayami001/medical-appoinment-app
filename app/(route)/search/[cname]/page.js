@@ -1,14 +1,14 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import {useEffect} from 'react'
 
-const Search = ({ params }) => {
+function Search({ params }) {
+  
+  useEffect(() => {
+  }, []);
 
-
-    return (
-        <div className='mt-5'>
-           
-        </div>
-    )
+  return (
+    <div>Search</div>
+  )
 }
 
 export default Search
