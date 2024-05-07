@@ -1,11 +1,12 @@
 "use client"
-import {useEffect} from 'react'
+import React from 'react'
+import { useEffect } from 'react'
 
-function Search({ params }) {
-  
-  useEffect(() => {
-  }, []);
+function Search({params}) {
 
+  useEffect(()=>{
+    console.log(params.cname)
+  }, [])
   return (
     <div>Search</div>
   )

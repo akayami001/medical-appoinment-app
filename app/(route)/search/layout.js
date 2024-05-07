@@ -1,7 +1,6 @@
-import React from 'react'
 import CategoryList from './_components/CategoryList'
 
-const Layout = ({ children }) => {
+const Layout = ({ children}) => {
     return (
         <div className='grid grid-cols-4'>
             <div className='hidden md:block'>
