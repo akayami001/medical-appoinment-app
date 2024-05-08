@@ -1,6 +1,7 @@
 import Image from "next/image";
+import {data} from "../_mocks_/DoctorsData";
 
-const DoctorList = ({ data }) => {
+const DoctorList = () => {
   return (
     <div className="mb-10 px-8">
       <h2 className="font-bold text-xl">Our Doctors</h2>
@@ -13,7 +14,7 @@ const DoctorList = ({ data }) => {
                 alt="Doctor"
                 width={500}
                 height={200}
-                className="h-[260px] w-full object-cover rounded"
+                className="h-[452px] w-full object-cover rounded"
               />
 
               <div className="mt-3 items-baseline flex flex-col gap-1">

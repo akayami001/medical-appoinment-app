@@ -1,17 +1,12 @@
 'use client'
-import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeperator, CommandShortcut } from "@/components/ui/command";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { data } from "../../../_mocks_/CategoryData.js";
 import Image from "next/image";
 import Link from "next/link.js";
 import { usePathname } from "next/navigation.js";
-import { useEffect } from "react";
 
 const CategoryList = () => {
     const params = usePathname();
-    console.log(params);
     const category = params.split('/')[2];
 
     return (
@@ -48,7 +43,7 @@ const CategoryList = () => {
             </Command>
 
         </div>
-       
+
     );
 }
 
