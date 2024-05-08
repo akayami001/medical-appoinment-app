@@ -15,7 +15,7 @@ const BlogDetails = ({ params }) => {
       <div className="w-full max-w-md">
         <div className="overflow-hidden rounded-lg shadow transition hover:shadow-lg flex flex-col items-center justify-center p-4">
           <Image
-            alt=""
+            alt={post.title}
             src={post.image}
             width={270}
             height={100}
