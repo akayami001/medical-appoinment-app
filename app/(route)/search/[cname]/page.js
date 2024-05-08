@@ -1,13 +1,8 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import { useEffect } from 'react'
 import { data } from "../../../_mocks_/DoctorsData";
 function Search({ params }) {
-
-  useEffect(() => {
-    console.log(params.cname)
-  }, [])
 
   return (
     <div>
