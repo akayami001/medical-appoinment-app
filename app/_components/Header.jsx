@@ -48,6 +48,14 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-gray-500 transition hover:text-primary"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+              </li>
             </ul>
           </nav>
 
