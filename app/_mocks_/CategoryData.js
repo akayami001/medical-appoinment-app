@@ -14,4 +14,9 @@ export const data = [
     name: "HairTransplantation",
     url: "https://pics.freeicons.io/uploads/icons/png/1702211751637595835-64.png",
   },
+  {
+    id: 3,
+    name: "Genetic",
+    url: "https://pics.freeicons.io/uploads/icons/png/151757868716274686763758-64.png",
+  },
 ];
