@@ -6,7 +6,7 @@ export const data = [
   },
   {
     id: 2,
-    name: "Esthetic",
+    name: "Aesthetic",
     url: "https://pics.freeicons.io/uploads/icons/png/2430798091657170631-64.png",
   },
   {
