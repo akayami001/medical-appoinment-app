@@ -34,8 +34,7 @@ const Gallery = () => {
               return (
                 <CarouselItem
                   key={index}
-                  className="md:basis-2/3 lg:basis-8/10 xl:basis-9/10 px-2"
-                >
+                  className="md:basis-2/3 lg:basis-8/10 xl:basis-9/10 px-2">
                   <div className="p-1">
                     <Card>
                       <CardContent className="overflow-hidden rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
