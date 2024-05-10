@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Testimonials from "../_components/Testimonials";
 
 const About = () => {
   return (
@@ -119,7 +120,8 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <Testimonials/>
+      {/* <div className="bg-white">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
             Read trusted reviews from our customers
@@ -331,7 +333,7 @@ const About = () => {
             </blockquote>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="bg-gray-50">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="mx-auto max-w-lg text-center">
