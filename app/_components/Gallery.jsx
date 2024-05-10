@@ -22,7 +22,6 @@ const Gallery = () => {
           consequuntur saepe laborum.
         </p>
       </div>
-
       <div className="mt-10">
         <Carousel
           opts={{
