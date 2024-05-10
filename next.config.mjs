@@ -1,8 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ["pics.freeicons.io"], // Add your allowed image domains here
-  },
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "pics.freeicons.io",
+				port: "",
+			},
+
+			{
+				protocol: "https",
+				hostname: "**.hearstapps.com",
+				port: "",
+			},
+
+			{
+				protocol: "https",
+				hostname: "www.topgear.com",
+				port: "",
+			},
+		],
+	},
 };
 
 export default nextConfig;
