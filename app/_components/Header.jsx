@@ -43,9 +43,9 @@ const Header = () => {
               <li>
                 <Link
                   className="text-gray-500 transition hover:text-primary"
-                  href="/contact"
+                  href="/gallery"
                 >
-                  Contact
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -54,6 +54,14 @@ const Header = () => {
                   href="/blog"
                 >
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-500 transition hover:text-primary"
+                  href="/contact"
+                >
+                  Contact
                 </Link>
               </li>
             </ul>
