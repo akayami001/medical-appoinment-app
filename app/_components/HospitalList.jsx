@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { data } from "../_mocks_/DoctorsData";
+import { data } from "../_mocks_/HospitalData";
 
-const DoctorList = () => {
+const HospitalList = () => {
   return (
     <div className="container mx-auto p-8 mb-10">
       <h2 className="font-bold text-2xl mb-4">Our Doctors</h2>
@@ -29,7 +29,7 @@ const DoctorList = () => {
                 </h2>
 
                 <h2 className="font-bold text-lg">{doctor.name}</h2>
-                <h2 className="text-primary text-sm">{doctor.experience}</h2>
+                <h2 className="text-primary text-sm">{doctor.adress}</h2>
               </div>
             </div>
           ))}
@@ -38,4 +38,4 @@ const DoctorList = () => {
   );
 };
 
-export default DoctorList;
+export default HospitalList;
