@@ -2,8 +2,6 @@
 const nextConfig = {
   images: {
 
-    
-
     remotePatterns: [
       {
         protocol: 'https',
@@ -16,7 +14,6 @@ const nextConfig = {
         pathname: '**',
       },
     ],
-
   },
 };
 
