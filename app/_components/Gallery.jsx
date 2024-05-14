@@ -41,7 +41,7 @@ const Gallery = () => {
                       <CardContent className=" h-64 md:h-96 rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
                         {item.type === "image" && (
                           <Image
-                            className="h-full w-full object-cover  rounded-t-lg mx-auto transition hover:scale-105 duration-300"
+                            className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
                             src={item.image}
                             alt={item.alt}
