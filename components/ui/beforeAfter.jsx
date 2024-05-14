@@ -33,12 +33,12 @@ const BeforeAfter = ({ imageBefore, imageAfter }) => {
         onPointerEnter={handleMouseDown}
         onPointerLeave={handleMouseUp}
       >
-        <Image fill priority alt="image-before" src={imageBefore} />
+        <Image fill priority alt="image-after" src={imageAfter} />
         <div
           className="absolute top-0 left-0 right-0 w-full h-full overflow-hidden"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
-          <Image fill priority alt="image-after" src={imageAfter} />
+          <Image fill priority alt="image-before" src={imageBefore} />
         </div>
         <div
           className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize transition"
