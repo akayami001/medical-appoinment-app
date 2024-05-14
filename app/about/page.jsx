@@ -23,7 +23,7 @@ const About = () => {
             <div className="mt-4 sm:mt-8">
               <Link
                 href="contact"
-                className="inline-block rounded-full bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                className="inline-block rounded-md bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-primary/90 focus:outline-none focus:ring"
               >
                 Contact Us
               </Link>
@@ -120,7 +120,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Testimonials/>
+      <Testimonials />
       {/* <div className="bg-white">
         <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">

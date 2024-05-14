@@ -19,7 +19,7 @@ const Categories = () => {
               height={70}
               className="bg-blue-50"
             />
-            <label className="text-blue-600 text-sm"> {item.name}</label>
+            <label className="text-primary text-sm"> {item.name}</label>
           </Link>
         ))}
       </div>
