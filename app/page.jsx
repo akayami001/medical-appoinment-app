@@ -1,17 +1,20 @@
 import Hero from "./_components/Hero";
 import Categories from "./_components/Categories";
-import DoctorList from "./_components/DoctorList";
+import HospitalList from "./_components/HospitalList";
 import OurServices from "./_components/OurServices";
 import BeforeAfter from "./_components/BeforeAfter";
+import Gallery from "./_components/Gallery";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
-	return (
-		<div>
-			<Hero />
-			<Categories />
-			<BeforeAfter />
-			<DoctorList />
-			<OurServices />
-		</div>
-	);
+  return (
+    <div>
+      <Hero />
+      <Categories />
+      <HospitalList />
+      <Testimonials/>
+      <OurServices />
+      <Gallery />
+    </div>
+  );
 }
