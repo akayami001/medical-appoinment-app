@@ -19,7 +19,7 @@ const Hero = () => {
           <div className="lg:py-24">
             <h2 className="text-3xl font-bold sm:text-4xl">
               Find & Book <span className="text-primary">Appointment</span> with
-              your Fave <span className="text-primary">Doctors</span>
+              <span className="text-primary pl-2">Doctors</span>
             </h2>
 
             <p className="mt-4 text-gray-600">
