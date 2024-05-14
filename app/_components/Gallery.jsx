@@ -34,13 +34,14 @@ const Gallery = () => {
               return (
                 <CarouselItem
                   key={index}
-                  className="md:basis-2/3 lg:basis-8/10 xl:basis-9/10 px-2">
+                  className=" md:basis-2/3 lg:basis-8/10 xl:basis-9/10 px-2 py-4 flex flex-col items-center justify-center"
+                >
                   <div className="p-1">
                     <Card>
-                      <CardContent className="overflow-hidden rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
+                      <CardContent className="rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
                         {item.type === "image" && (
                           <Image
-                            className="h-56 rounded-t-lg mx-auto"
+                            className="h-56 rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
                             src={item.image}
                             alt={item.alt}
@@ -50,15 +51,15 @@ const Gallery = () => {
                           />
                         )}
                         {item.type === "video" && (
-                            <video
-                              className="rounded-t-lg mx-auto"
-                              key={item.id}
-                              controls
-                              width={1900}
-                              height={900}
-                            >
-                              <source src={item.image} type="video/mp4" />
-                            </video>
+                          <video
+                            className="rounded-t-lg mx-auto"
+                            key={item.id}
+                            controls
+                            width={1900}
+                            height={900}
+                          >
+                            <source src={item.image} type="video/mp4" />
+                          </video>
                         )}
                       </CardContent>
                     </Card>
