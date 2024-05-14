@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-const BeforeAfter = () => {
+const BeforeAfter = ({ name, imageBefore, imageAfter }) => {
 	const [sliderPosition, setSliderPosition] = useState(50);
 	const [isDragging, setIsDragging] = useState(false);
 
@@ -21,35 +21,44 @@ const BeforeAfter = () => {
 		setIsDragging(false);
 	};
 
-	const imageBefore =
-		"https://www.topgear.com/sites/default/files/2023/04/1%20Bentley%20Flying%20Spur%20Speed.jpg";
-	const imageAfter =
-		"https://hips.hearstapps.com/hmg-prod/images/2021-bentley-flying-spur-v8-106-1611696475.jpg";
-
 	return (
-		<div className="relative m-5 w-full border p-5" onMouseUp={handleMouseUp}>
-			<div className=" text-center items-center w-fulL m-3 justify-center text-2xl ">
-				<h1>
-					BEFORE AFTER <br />
-					Image Comparison Slider
+		<div
+			className="relative w-full p-3 justify-center items-center hover:-translate-y-5 transition-all ease-in-out"
+			onMouseUp={handleMouseUp}
+		>
+			<div className="relative text-center w-full items-center justify-center p-3 mb-3">
+				<h1 className="relative text-center text-primary items-center justify-center p-3 mb-2 text-sm md:text-xl lg:text-2xl">
+					{name}
 				</h1>
 			</div>
 			<div
-				className="relative w-full max-w-[900px] aspect-[77/55] m-auto overflow-hidden select-none border "
+				className="relative w-full max-w-[366px] aspect-[77/55] m-auto overflow-hidden select-none justify-center items-center p-1"
 				onMouseMove={handleMove}
 				onMouseDown={handleMouseDown}
 				onPointerEnter={handleMouseDown}
 				onPointerLeave={handleMouseUp}
 			>
-				<Image fill priority alt="image-before" src={imageBefore} />
+				<Image
+					fill
+					priority
+					alt="image-before"
+					src={imageBefore}
+					className="rounded-xl"
+				/>
 				<div
 					className="absolute top-0 left-0 right-0 w-full max-w-[900px] aspect-[77/55] m-auto overflow-hidden"
 					style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
 				>
-					<Image fill priority alt="image-after" src={imageAfter} />
+					<Image
+						fill
+						priority
+						alt="image-after"
+						src={imageAfter}
+						className="rounded-xl"
+					/>
 				</div>
 				<div
-					className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize transition"
+					className="absolute top-0 bottom-0 w-2 bg-black cursor-ew-resize transition"
 					style={{ left: `calc(${sliderPosition}% - 1px)` }}
 				>
 					<div className="absolute bg-white h-2 w-3 -left-1 top-[calc(50%-5px)]" />
