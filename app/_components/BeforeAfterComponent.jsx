@@ -5,7 +5,7 @@ const BeforeAfterComponent = () => {
   return (
     <div className="">
       <h2 className="text-3xl font-bold sm:text-4xl text-center">
-        Before After
+        Before <span className="text-primary">After</span>
       </h2>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
         <BeforeAfter imageBefore={"/before.png"} imageAfter={"/after.png"} />
