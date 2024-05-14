@@ -31,7 +31,7 @@ const CategoryList = () => {
                 >
                   <Link href={`/search/${item?.name}`}>
                     <div
-                      className={`p-2 flex gap-2 text-[14px] items-center text-blue-600 rounded-md cursor-pointer   w-full ${
+                      className={`p-2 flex gap-2 text-[14px] items-center text-primary rounded-md cursor-pointer   w-full ${
                         category == item.name && "bg-blue-100"
                       }`}
                     >

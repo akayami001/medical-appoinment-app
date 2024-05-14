@@ -70,7 +70,7 @@ const page = () => {
             <div className="max-w-xl lg:max-w-3xl">
               <div className="relative -mt-16 block lg:hidden">
                 <Link
-                  className="inline-flex size-16 items-center justify-center rounded-full bg-white text-blue-600 sm:size-20"
+                  className="inline-flex size-16 items-center justify-center rounded-full bg-white text-primary sm:size-20"
                   href="/"
                 >
                   <span className="sr-only">Home</span>

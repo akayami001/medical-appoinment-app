@@ -69,3 +69,4 @@ const BeforeAfter = ({ name, imageBefore, imageAfter }) => {
 };
 
 export default BeforeAfter;
+

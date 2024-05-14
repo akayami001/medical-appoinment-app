@@ -4,7 +4,10 @@ import { data } from "../_mocks_/HospitalData";
 const HospitalList = () => {
   return (
     <div className="container mx-auto p-8 mb-10">
-      <h2 className="font-bold text-2xl mb-4">Our Doctors</h2>
+      <h2 className="text-3xl font-bold sm:text-4xl text-center">
+        Our
+        <span className="text-primary pl-2">Hospitals</span>
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
         {data &&
           data.map((doctor, i) => (
