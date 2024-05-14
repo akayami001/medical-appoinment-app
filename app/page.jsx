@@ -4,7 +4,7 @@ import HospitalList from "./_components/HospitalList";
 import OurServices from "./_components/OurServices";
 import Gallery from "./_components/Gallery";
 import Testimonials from "./_components/Testimonials";
-import BeforeAfterComponent from "./_components/BeforeAfterComponent";
+import BeforeAfterImages from "./_components/BeforeAfterImages";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Categories />
       <HospitalList />
-      <BeforeAfterComponent />
+      <BeforeAfterImages />
       <Testimonials />
       <Gallery />
       <OurServices />

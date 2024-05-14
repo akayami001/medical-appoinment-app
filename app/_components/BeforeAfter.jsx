@@ -58,7 +58,7 @@ const BeforeAfter = ({ name, imageBefore, imageAfter }) => {
 					/>
 				</div>
 				<div
-					className="absolute top-0 bottom-0 w-2 bg-black cursor-ew-resize transition"
+					className="absolute top-0 bottom-0 w-1 bg-black cursor-ew-resize transition"
 					style={{ left: `calc(${sliderPosition}% - 1px)` }}
 				>
 					<div className="absolute bg-white h-2 w-3 -left-1 top-[calc(50%-5px)]" />
@@ -69,4 +69,3 @@ const BeforeAfter = ({ name, imageBefore, imageAfter }) => {
 };
 
 export default BeforeAfter;
-
