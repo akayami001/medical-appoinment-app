@@ -29,25 +29,24 @@ const Gallery = () => {
             dragFree: false,
           }}
         >
-          <CarouselContent className="-ml-1">
+          <CarouselContent className=" mx-auto">
             {data.map((item, index) => {
               return (
                 <CarouselItem
                   key={index}
-                  className=" md:basis-2/3 lg:basis-8/10 xl:basis-9/10 px-2 py-4 flex flex-col items-center justify-center"
+                  className=" basis-full lg:basis-1/2 px-2 py-4 flex flex-col items-center justify-center"
                 >
                   <div className="p-1">
                     <Card>
-                      <CardContent className="rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
+                      <CardContent className=" h-64 md:h-96 rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
                         {item.type === "image" && (
                           <Image
-                            className="h-56 rounded-t-lg mx-auto transition hover:scale-105 duration-300"
+                            className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
                             src={item.image}
                             alt={item.alt}
-                            layout="responsive"
-                            width={1900}
-                            height={900}
+                            width={500}
+                            height={500}
                           />
                         )}
                         {item.type === "video" && (
@@ -63,9 +62,6 @@ const Gallery = () => {
                         )}
                       </CardContent>
                     </Card>
-                    <p className="flex flex-col text-md font-medium justify-start p-2">
-                      {item.alt}
-                    </p>
                   </div>
                 </CarouselItem>
               );
