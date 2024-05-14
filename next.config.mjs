@@ -1,8 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "pics.freeicons.io",
+				port: "",
+			},
 
-    remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "**.hearstapps.com",
+				port: "",
+			},
+
+			{
+				protocol: "https",
+				hostname: "www.topgear.com",
+				port: "",
+			},
       {
         protocol: 'https',
         hostname: "pics.freeicons.io",
@@ -13,8 +29,8 @@ const nextConfig = {
         hostname: "i.pinimg.com",
         pathname: '**',
       },
-    ],
-  },
+		],
+  }
 };
 
 export default nextConfig;
