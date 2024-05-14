@@ -12,9 +12,12 @@ export default function Home() {
       <Hero />
       <Categories />
       <HospitalList />
+      <BeforeAfter />
       <Testimonials/>
-      <OurServices />
       <Gallery />
+      <OurServices />
+      
+      
     </div>
   );
 }
