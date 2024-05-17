@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import WhatsAppContact from "./WhatsAppContact";
 
 const Hero = () => {
   return (
@@ -28,7 +29,8 @@ const Hero = () => {
               minus veniam tempora deserunt? Molestiae eius quidem quam
               repellat.
             </p>
-            <Button className="mt-10">Explore Now</Button>
+            <WhatsAppContact phoneNumber="+491783739057" message="Hi there! I have a question..."/>
+            <Button  className="mt-10 ml-10">Refer Someone</Button>
           </div>
         </div>
       </div>
