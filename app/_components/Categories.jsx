@@ -15,9 +15,9 @@ const Categories = () => {
             <Image
               src={item.url}
               alt="icon"
-              width={70}
-              height={70}
-              className="bg-blue-50"
+              width={300}
+              height={200}
+              className="bg-blue-50 h-48 w-52"
             />
             <label className="text-primary text-sm"> {item.name}</label>
           </Link>

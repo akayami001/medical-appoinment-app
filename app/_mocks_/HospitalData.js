@@ -3,33 +3,26 @@ export const data =
 [
   {
     "id": 1,
-    "name": "Acıbadem",
+    "name": "Bau Dental",
     "adress": "İstanbul",
     "about": "lorem ipsum",
-    "fields": ["Aesthetic"," Hair-Transplantation"," Dentist",], 
-    "image": "https://i.pinimg.com/564x/ef/ab/65/efab656b00b6934bdb4092faedb90658.jpg"
+    "fields": [" Dentist"], 
+    "image": "/bau-dental-gallery-1-1.jpeg"
   },
   {
     "id": 2,
-    "name": "Medicana",
-    "adress": "Antalya",
+    "name": "Liv Hospital",
+    "adress": "Istanbul-Ankara",
     "about": "lorem ipsum",
     "fields": ["Aesthetic"," Hair-Transplantation"," Dentist",], 
-    "image": "https://i.pinimg.com/564x/4c/01/14/4c01143f692311b19fad4d78022e51a4.jpg"
+    "image": "/liv_clinics_cover.jpeg"
   },
   {
     "id": 3,
-    "name": "Özel Ümit Hastanesi",
-    "adress": "İzmir",
+    "name": "Koc University Hospital ",
+    "adress": "Istanbul",
     "about": "lorem ipsum",
-    "fields": "Aesthetic",
-    "image": "https://i.pinimg.com/564x/20/06/b5/2006b5b7ba0af6e236a0709c08785fa3.jpg"
+    "fields": ["Aesthetic"," Hair-Transplantation"," Dentist",],
+    "image": "/koc uni.jpeg"
   },
-  {
-    "name": "Özel Kurtköy Hastanesi",
-    "adress": "İstanbul",
-    "about": "lorem ipsum",
-    "fields": "Hair Transplantation",
-    "image": "https://i.pinimg.com/564x/8b/14/6e/8b146eaa485c3c5ea5f754073fb31eb4.jpg"
-  }
 ]
