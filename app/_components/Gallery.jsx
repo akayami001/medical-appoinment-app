@@ -17,9 +17,7 @@ const Gallery = () => {
           Our <span className=" text-primary">Gallery</span>
         </h2>
         <p className="mt-4 text-gray-600">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur
-          aliquam doloribus nesciunt eos fugiat. Vitae aperiam fugit
-          consequuntur saepe laborum.
+        Welcome to our gallery, where you can visually explore the unique experiences and successful treatment processes offered by our health tourism agency. From our state-of-the-art facilities to the treatments carried out by our expert physicians, every moment is meticulously documented. Witness the moments of recovery and the joyful smiles of our patients, giving you confidence in embarking on your own health journey. Discover detailed images of the services where we combine health and comfort seamlessly.
         </p>
       </div>
       <div className="mt-10">

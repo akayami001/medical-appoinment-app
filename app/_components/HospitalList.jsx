@@ -8,12 +8,12 @@ const HospitalList = () => {
         Our
         <span className="text-primary pl-2">Hospitals</span>
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+      <div className="flex lg:grid-cols-4 gap-7 justify-center">
         {data &&
           data.map((doctor, i) => (
             <div
               key={doctor.name}
-              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8"
+              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96"
             >
               <Image
                 src={doctor.image}

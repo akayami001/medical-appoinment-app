@@ -18,15 +18,12 @@ const Hero = () => {
 
           <div className="lg:py-24">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Find & Book <span className="text-primary">Appointment</span> with
-              <span className="text-primary pl-2">Doctors</span>
+              Find & Book <span className="text-primary">Top-Notch Patient Experience in Turkiye!</span> &
+              <span className="text-primary pl-2">Stay at the Pinnacle!</span>
             </h2>
 
             <p className="mt-4 text-gray-600">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-              hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-              minus veniam tempora deserunt? Molestiae eius quidem quam
-              repellat.
+            Revolutionary facilities, expert professionals, and bespoke care redefine the pinnacle of healthcare excellence..
             </p>
             <Button className="mt-10">Explore Now</Button>
           </div>
