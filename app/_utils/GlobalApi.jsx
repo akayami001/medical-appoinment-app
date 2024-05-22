@@ -17,7 +17,16 @@ const getHospitals = async () => {
   const response = await axiosClient.get("/hospitals?populate=*");
   return response.data.data;
 };
-module.exports = {
-  getCategories,
-  getHospitals,
+const getBlogs = async () => {
+  const response = await axiosClient.get("/blogs?populate=*");
+  return response.data.data;
 };
+const getBlogById = async (id) => {
+  const response = await axiosClient.get(`/blogs/${id}?populate=*`);
+  return response.data.data;
+};
+
+module.exports = {
+  getCategories, getBlogs, getBlogById, getHospitals
+};
+
