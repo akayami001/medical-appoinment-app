@@ -1,13 +1,24 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { getCategories } from "../_utils/GlobalApi";
+import { useEffect, useState } from "react";
 
-const Categories = async () => {
-  const data = await getCategories();
+const Categories = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await getCategories();
+      setCategories(response);
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <div className="mb-10 items-center flex flex-col gap-2">
       <div className="grid grid-cols-1 md:grid-cols-4  ">
-        {data.map((item) => (
+        {categories.map((item) => (
           <Link
             href={"/search/" + item.attributes.name}
             key={item.id}
