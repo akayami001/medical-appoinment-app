@@ -29,4 +29,3 @@ const getBlogById = async (id) => {
 module.exports = {
   getCategories, getBlogs, getBlogById, getHospitals
 };
-
