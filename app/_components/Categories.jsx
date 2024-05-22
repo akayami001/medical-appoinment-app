@@ -7,11 +7,11 @@ const getCategories = async () => {
   const res = await fetch(
     "https://better-wealth-48913fa7ae.strapiapp.com/api/categories?populate=*",
     {
+      cache: "no-store",
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${API_KEY}`,
-        cache: "no-store",
       },
     }
   );
