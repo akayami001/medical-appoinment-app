@@ -13,6 +13,13 @@ const getCategories = async () => {
   const response = await axiosClient.get("/categories?populate=*");
   return response.data.data;
 };
+
+const getTestimonials = async () => {
+  const response = await axiosClient.get("/reviews?populate=*");
+  return response.data.data;
+};
+
 module.exports = {
   getCategories,
+  getTestimonials,
 };
