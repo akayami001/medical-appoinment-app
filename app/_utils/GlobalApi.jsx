@@ -16,7 +16,6 @@ const getCategories = async () => {
 const getHospitals = async () => {
   const response = await axiosClient.get("/hospitals?populate=*");
   return response.data.data;
-  console.log(response);
 };
 module.exports = {
   getCategories,

@@ -10,7 +10,7 @@ const HospitalList = async () => {
         Our
         <span className="text-primary pl-2">Hospitals</span>
       </h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
         {data &&
           data.map((hospital, i) => (
             <div
@@ -19,7 +19,7 @@ const HospitalList = async () => {
             >
               <Image
                 src={hospital.attributes.image.data.attributes.url}
-                alt="Doctor"
+                alt={hospital.attributes.name}
                 width={500}
                 height={200}
                 className="w-full h-48 object-top md:h-64 lg:h-80 object-cover rounded-t-lg"
