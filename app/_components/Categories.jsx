@@ -1,24 +1,31 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { getCategories } from "../_utils/GlobalApi";
-import { useEffect, useState } from "react";
 
-const Categories = () => {
-  const [categories, setCategories] = useState([]);
+const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const response = await getCategories();
-      setCategories(response);
-    };
-    fetchCategories();
-  }, []);
+const getCategories = async () => {
+  const res = await fetch(
+    "https://better-wealth-48913fa7ae.strapiapp.com/api/categories?populate=*",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${API_KEY}`,
+        cache: "no-store",
+      },
+    }
+  );
+  const data = await res.json();
+  return data.data;
+};
 
+const Categories = async () => {
+  const data = await getCategories();
+  console.log(data);
   return (
     <div className="mb-10 items-center flex flex-col gap-2">
       <div className="grid grid-cols-1 md:grid-cols-4  ">
-        {categories.map((item) => (
+        {data.map((item) => (
           <Link
             href={"/search/" + item.attributes.name}
             key={item.id}
