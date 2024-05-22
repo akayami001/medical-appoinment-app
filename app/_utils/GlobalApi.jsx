@@ -13,6 +13,11 @@ const getCategories = async () => {
   const response = await axiosClient.get("/categories?populate=*");
   return response.data.data;
 };
+const getHospitals = async () => {
+  const response = await axiosClient.get("/hospitals?populate=*");
+  return response.data.data;
+};
 module.exports = {
   getCategories,
+  getHospitals,
 };
