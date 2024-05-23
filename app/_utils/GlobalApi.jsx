@@ -18,12 +18,10 @@ const getHospitals = async () => {
   const response = await axiosClient.get("/hospitals?populate=*");
   return response.data.data;
 };
-
 const getTestimonials = async () => {
-  const response = await axiosClient.get("/reviews?populate=*");
-  return response.data.data;
+  const data = await fetchData("/reviews?populate=*");
+  return data.data;
 };
-
 module.exports = {
   getCategories,
    getHospitals,
