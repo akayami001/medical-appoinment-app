@@ -56,9 +56,9 @@ const Footer = () => {
           <Image
           src="/healthclinicturkey-high-resolution-logo-transparent.png"
           alt="Health Clinic Turkey Logo"
-          width={200} 
-          height={800} 
-          className="w-52"
+          width={400} 
+          height={100} 
+          //className="w-52"
         />
         </div>
 

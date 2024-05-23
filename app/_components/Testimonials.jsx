@@ -7,7 +7,7 @@ const testimonials = [
     imageSrc: "/user2.avif",
     treatment: "Hair Transplant",
     comment:
-      "Hair loss was really affecting my self-esteem. I researched hair transplants and chose [Clinic Name] because of their advanced techniques and excellent reputation. The whole process was very professional, and the staff made me feel comfortable every step of the way. The results are incredible! My hair looks thicker and younger, and I feel so much more confident now.",
+      "Hair loss was really affecting my self-esteem. I researched hair transplants and chose Health Clinic because of their advanced techniques and excellent reputation. The whole process was very professional, and the staff made me feel comfortable every step of the way. The results are incredible! My hair looks thicker and younger, and I feel so much more confident now.",
     score: 5,
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     imageSrc: "/user3.avif",
     treatment: "Dental Implants",
     comment:
-      "For years, I was self-conscious about my smile because of missing teeth. Eating was difficult, and I wouldn't even smile in pictures.  I finally decided to get dental implants at [Clinic Name], and it was the best decision I ever made! The procedure was smoother than I expected, and Dr. Lee was fantastic. Now, I can eat anything I want and smile with confidence. My implants look and feel completely natural!",
+      "For years, I was self-conscious about my smile because of missing teeth. Eating was difficult, and I wouldn't even smile in pictures.  I finally decided to get dental implants at Health Clinic, and it was the best decision I ever made! The procedure was smoother than I expected, and Dr. Lee was fantastic. Now, I can eat anything I want and smile with confidence. My implants look and feel completely natural!",
     score: 4,
   },
   {
@@ -25,7 +25,7 @@ const testimonials = [
     imageSrc: "/user.avif",
     treatment: "Plastic Surgery",
     comment:
-      "After having children, I noticed a significant change in my stomach. I considered exercising and dieting, but nothing seemed to work. I consulted with Dr. Patel at [Clinic Name] about a tummy tuck. He explained the procedure thoroughly and answered all my questions. The surgery went well, and the recovery process was easier than I anticipated. Now, I feel fantastic about my body again. Thanks to [Clinic Name], I look and feel ten years younger!",
+      "After having children, I noticed a significant change in my stomach. I considered exercising and dieting, but nothing seemed to work. I consulted with Dr. Patel at Health Clinic about a tummy tuck. He explained the procedure thoroughly and answered all my questions. The surgery went well, and the recovery process was easier than I anticipated. Now, I feel fantastic about my body again. Thanks to Health Clinic, I look and feel ten years younger!",
     score: 5,
   },
 ];
