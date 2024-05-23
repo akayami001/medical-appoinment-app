@@ -8,11 +8,11 @@ const Header = () => {
         <Link className="block text-teal-600" href="./">
         <span className="sr-only">Home</span>
         <Image
-          src="/healthclinicturkey-high-resolution-logo.png"
+          src="/healthclinicturkey-high-resolution-logo-transparent.png"
           alt="Health Clinic Turkey Logo"
-          width={200} 
-          height={800} 
-          className="h-52"
+          width={300} 
+          height={100} 
+          className="h-42"
         />
         </Link>
 
