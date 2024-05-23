@@ -14,8 +14,7 @@ const About = () => {
             </h2>
 
             <p className="hidden  text-white/70 md:mt-6 md:block md:text-lg md:leading-relaxed">
-              
-              Our health clinic is one of the Medicinity companies. Like the other businesses within Medicinity, our health clinic aims to be a successful and high-quality solution partner in the healthcare tourism industry.
+               Our health clinic is one of the Medicinity companies. Like the other businesses within Medicinity, our health clinic aims to be a successful and high-quality solution partner in the healthcare tourism industry.
             </p>
 
             <div className="mt-4 sm:mt-8">
