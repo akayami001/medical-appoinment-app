@@ -14,6 +14,11 @@ const getCategories = async () => {
   return response.data.data;
 };
 
+const getHospitals = async () => {
+  const response = await axiosClient.get("/hospitals?populate=*");
+  return response.data.data;
+};
+
 const getTestimonials = async () => {
   const response = await axiosClient.get("/reviews?populate=*");
   return response.data.data;
@@ -21,5 +26,6 @@ const getTestimonials = async () => {
 
 module.exports = {
   getCategories,
+   getHospitals,
   getTestimonials,
 };
