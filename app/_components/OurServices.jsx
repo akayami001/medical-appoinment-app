@@ -38,9 +38,7 @@ const OurServices = () => {
           </h2>
 
           <p className="mt-4 text-gray-600">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
-            fugit consequuntur saepe laborum.
+          At  Health Clinic, our services are always patient-centered. We ensure that you receive the highest quality care throughout your treatment, provided by specialist physicians in the most appropriate manner.
           </p>
         </div>
         <div className="mt-8 grid grid-cols-1 gap-y-10 md:grid-cols-2 lg:grid-cols-5">
