@@ -27,7 +27,7 @@ const Hero = () => {
             Revolutionary facilities, expert professionals, and bespoke care redefine the pinnacle of healthcare excellence..
             </p>
             <WhatsAppContact phoneNumber="+491783739057" message="Hi there! I have a question..."/>
-            <Button  className="mt-10 ml-10">Refer Someone</Button>
+            <Button  className="mt-10 ml-10">Refer&Earn</Button>
           </div>
         </div>
       </div>
