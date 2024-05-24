@@ -37,4 +37,9 @@ const getHospitals = async () => {
   return data.data;
 };
 
-export { getCategories, getHospitals };
+const getTestimonials = async () => {
+  const data = await fetchData("/reviews?populate=*");
+  return data.data;
+};
+
+export { getCategories, getHospitals, getTestimonials };
