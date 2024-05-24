@@ -70,7 +70,7 @@ const Header = () => {
                 className="block rounded-full bg-green-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-secondary hover:text-primary"
                 href="/contact"
               >
-                <Image src="/whatsapp.png" width={25} height={25}/>
+                <Image src="/whatsapp.png" alt="whatsapp" width={25} height={25}/>
               </Link>
             </div>
 

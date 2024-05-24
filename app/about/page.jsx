@@ -68,7 +68,7 @@ const About = () => {
               <h2 className="text-3xl font-bold sm:text-4xl">Our Mission</h2>
 
               <p>
-              Our health clinic has grown from a commitment to providing differentiated healthcare solutions for our customers, prioritizing quality, trust, and diversity. We are dedicated to meeting and exceeding the full spectrum of our customers' expectations—from the comfort of their homes to their safe return home—by offering high-level support and continuous care. We advocate for everyone who chooses our services, helping them heal, feel better, and enhance their quality of life.
+              Our health clinic has grown from a commitment to providing differentiated healthcare solutions for our customers, prioritizing quality, trust, and diversity. We are dedicated to meeting and exceeding the full spectrum of our customers&apos; expectations—from the comfort of their homes to their safe return home—by offering high-level support and continuous care. We advocate for everyone who chooses our services, helping them heal, feel better, and enhance their quality of life.
               </p>
             </div>
           </div>
@@ -91,7 +91,9 @@ const About = () => {
               <h2 className="text-3xl font-bold sm:text-4xl">Our Culture</h2>
 
               <p>
-              Our health clinic strives to create a culture that empowers honest, supportive, and high-quality healthcare services. We are passionate about our customers and believe that communication and empathy are essential in helping them achieve their health goals. We value how each new customer contributes to our culture. We enable our company partners to bring fresh perspectives and cutting-edge methods to their services, and we consistently assess and meet our clients' reasonable expectations.
+              Our health clinic strives to create a culture that empowers honest, supportive, and high-quality healthcare services. We are passionate about our customers and believe that communication and empathy are essential in helping them achieve their health goals.
+               We value how each new customer contributes to our culture.
+                We enable our company partners to bring fresh perspectives and cutting-edge methods to their services, and we consistently assess and meet our clients&apos; reasonable expectations.
               </p>
             </div>
           </div>
