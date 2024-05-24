@@ -36,8 +36,14 @@ const getHospitals = async () => {
   const data = await fetchData("/hospitals?populate=*");
   return data.data;
 };
+
 const getServices = async () => {
   const data = await fetchData("/services?populate=*");
   return data.data;
 };
-export { getCategories, getHospitals, getServices };
+
+const getGallery = async () => {
+  const data = await fetchData("/galleries?populate=*");
+  return data.data;
+};
+export { getCategories, getHospitals, getServices, getGallery };
