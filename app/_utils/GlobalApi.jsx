@@ -57,8 +57,9 @@ const getBlogs = async () => {
   return data.data;
 };
 
-const getBlogById = async () => {
+const getBlogById = async (id) => {
   const data = await fetchData(`/blogs/${id}?populate=*`);
+  console.log(data);
   return data.data;
 };
 
