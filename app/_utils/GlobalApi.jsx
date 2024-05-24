@@ -36,5 +36,8 @@ const getHospitals = async () => {
   const data = await fetchData("/hospitals?populate=*");
   return data.data;
 };
-
-export { getCategories, getHospitals };
+const getServices = async () => {
+  const data = await fetchData("/services?populate=*");
+  return data.data;
+};
+export { getCategories, getHospitals, getServices };
