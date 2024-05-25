@@ -52,10 +52,23 @@ const getTestimonials = async () => {
   return data.data;
 };
 
+const getBlogs = async () => {
+  const data = await fetchData("/blogs?populate=*");
+  return data.data;
+};
+
+const getBlogById = async (id) => {
+  const data = await fetchData(`/blogs/${id}?populate=*`);
+  return data.data;
+};
+
 export {
   getCategories,
   getHospitals,
   getServices,
   getGallery,
   getTestimonials,
+  getBlogs,
+  getBlogById
 };
+
