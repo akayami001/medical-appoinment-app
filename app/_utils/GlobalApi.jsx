@@ -1,10 +1,10 @@
 const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
-const BASE_URL = "https://better-wealth-48913fa7ae.strapiapp.com/api";
+const BASE_URL = "https://faithful-smile-d6918f5d1c.strapiapp.com/api";
 
 const fetchData = async (endpoint, options = {}) => {
   const defaultOptions = {
-    cache: "no-store",
+    // cache: "no-store",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${API_KEY}`,
@@ -28,12 +28,16 @@ const fetchData = async (endpoint, options = {}) => {
 };
 
 const getCategories = async () => {
-  const data = await fetchData("/categories?populate=*");
+  const data = await fetchData("/categories?populate=*", {
+    next: { tags: ["categories"] },
+  });
   return data.data;
 };
 
 const getHospitals = async () => {
-  const data = await fetchData("/hospitals?populate=*");
+  const data = await fetchData("/hospitals?populate=*", {
+    next: { tags: ["hospitals"] },
+  });
   return data.data;
 };
 
@@ -69,6 +73,5 @@ export {
   getGallery,
   getTestimonials,
   getBlogs,
-  getBlogById
+  getBlogById,
 };
-

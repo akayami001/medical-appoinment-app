@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "better-wealth-48913fa7ae.media.strapiapp.com",
+        hostname: "faithful-smile-d6918f5d1c.media.strapiapp.com",
         port: "",
       },
 
