@@ -11,11 +11,11 @@ export default function Home() {
     <div>
       <Hero />
       <Categories />
-      {/* <HospitalList /> */}
-      {/* <BeforeAfterComponent /> */}
-      {/* <Testimonials /> */}
-      {/* <Gallery /> */}
-      {/* <OurServices /> */}
+      <HospitalList />
+      <BeforeAfterComponent />
+      <Testimonials />
+      <Gallery />
+      <OurServices />
     </div>
   );
 }
