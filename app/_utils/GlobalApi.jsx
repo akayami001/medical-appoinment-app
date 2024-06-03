@@ -1,6 +1,6 @@
 const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
-const BASE_URL = "https://http://172.205.44.63:1337/api";
+const BASE_URL = "http://172.205.44.63:1337/api";
 
 const fetchData = async (endpoint, options = {}) => {
   const defaultOptions = {
