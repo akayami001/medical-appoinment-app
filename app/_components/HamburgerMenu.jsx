@@ -32,7 +32,7 @@ const HamburgerMenu = () => {
           </svg>
         </button>
         <div
-          className={`fixed right-0 top-0 w-[60%] rounded-sm sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 z-20 ${
+          className={`fixed right-0 top-0 w-[100%] rounded-sm sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500 z-20 ${
             menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
