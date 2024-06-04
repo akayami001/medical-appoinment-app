@@ -4,7 +4,7 @@ import { getCategories } from "../_utils/GlobalApi";
 
 const Categories = async () => {
   const data = await getCategories();
-  
+
   return (
     <div className="mb-10 items-center flex flex-col gap-2">
       <div className="grid grid-cols-1 md:grid-cols-4  ">
@@ -15,7 +15,7 @@ const Categories = async () => {
             className="flex flex-col text-center justify-center items-center p-5 bg-blue-50 m-2 rounded-lg gap-10 hover:scale-110 transition-all ease-in-out"
           >
             <Image
-              src={item.attributes?.icon?.data.attributes?.url}
+              src={item.attributes?.icon?.data?.attributes?.url}
               alt="icon"
               width={300}
               height={200}
