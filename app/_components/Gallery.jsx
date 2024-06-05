@@ -12,7 +12,7 @@ import { getGallery } from "../_utils/GlobalApi";
 const Gallery = async () => {
   const data = await getGallery();
   return (
-    <div className="mx-auto w-4/5 max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <div className="mx-auto w-4/5 max-w-screen-xl px-5 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-lg text-center">
         <h2 className="text-3xl font-bold sm:text-4xl">
           Our <span className=" text-primary">Gallery</span>
