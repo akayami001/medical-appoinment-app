@@ -49,7 +49,7 @@ const Gallery = async () => {
                           <Image
                             className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
-                            src={item.attributes?.image?.data.attributes?.url}
+                            src={item.attributes?.image?.data?.attributes?.url}
                             alt={item.attributes?.name}
                             width={500}
                             height={500}
@@ -64,7 +64,9 @@ const Gallery = async () => {
                             height={900}
                           >
                             <source
-                              src={item.attributes?.image?.data.attributes?.url}
+                              src={
+                                item.attributes?.image?.data?.attributes?.url
+                              }
                               type="video/mp4"
                             />
                           </video>
