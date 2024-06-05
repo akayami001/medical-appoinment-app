@@ -15,7 +15,7 @@ const HospitalList = async () => {
           data.map((hospital, i) => (
             <div
               key={hospital?.attributes?.name}
-              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96"
+              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96   hover:scale-110 transition-all ease-in-out"
             >
               <Image
                 src={hospital?.attributes?.image?.data?.attributes?.url}
