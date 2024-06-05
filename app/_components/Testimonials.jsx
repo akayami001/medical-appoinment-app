@@ -11,10 +11,10 @@ const Testimonials = async () => {
           Read trusted reviews from our customers
         </h2>
 
-        <div className="mt-8 flex flex-wrap -mx-4">
+        <div className="mt-8 flex flex-wrap -mx-4 justify-center">
           {data.map((item) => (
             <blockquote key={item.id} className="w-full md:w-1/3 px-4 mb-8">
-              <div className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 h-full">
+              <div className="rounded-lg min-w-64 bg-gray-50 p-6 shadow-sm sm:p-8 h-full ">
                 <div className="flex items-center gap-4">
                   <Image
                     alt=""
