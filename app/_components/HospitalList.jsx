@@ -10,22 +10,25 @@ const HospitalList = async () => {
         Our
         <span className="text-primary pl-2">Hospitals</span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
+      <div className="flex flex-wrap gap-7 justify-center">
         {data &&
           data.map((hospital, i) => (
             <div
               key={hospital?.attributes?.name}
               className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96"
             >
-              <Image
-                src={hospital?.attributes?.image?.data?.attributes?.url}
-                alt={hospital?.attributes?.name}
-                width={500}
-                height={200}
-                className="w-full h-48 object-top md:h-64 lg:h-80 object-cover rounded-t-lg"
-              />
+              <div>
+                <Image
+                  src={hospital?.attributes?.image?.data?.attributes?.url}
+                  alt={hospital?.attributes?.name}
+                  width={500}
+                  height={500}
+                  className="w-full h-48 object-top md:h-64  object-fit  rounded-t-lg"
+                />
+              </div>
+
               <div className="mt-4 md:mt-6 lg:mt-8">
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap ">
                   {hospital.attributes?.departments?.data?.map(
                     (department, i) => (
                       <h2
@@ -37,7 +40,7 @@ const HospitalList = async () => {
                     )
                   )}
                 </div>
-                <h2 className="font-bold text-lg">
+                <h2 className="font-bold text-lg my-2">
                   {hospital?.attributes?.name}
                 </h2>
                 <div className="flex flex-wrap">
