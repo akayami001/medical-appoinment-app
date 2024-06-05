@@ -6,8 +6,11 @@ const Categories = async () => {
   const data = await getCategories();
 
   return (
-    <div className="mb-10 items-center flex flex-col gap-2">
-      <div className="grid grid-cols-1 md:grid-cols-4  ">
+    <div className="mb-10 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold md:text-4xl text-center py-3">
+        Our <span className=" text-primary">Treatments</span>
+      </h2>
+      <div className="flex flex-wrap justify-center gap-5">
         {data.map((item) => (
           <Link
             href={"/search/" + item.attributes.name}
