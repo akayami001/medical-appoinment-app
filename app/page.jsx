@@ -5,7 +5,6 @@ import HospitalList from "./_components/HospitalList";
 import OurServices from "./_components/OurServices";
 import Testimonials from "./_components/Testimonials";
 import BeforeAfterComponent from "./_components/BeforeAfterComponent";
-import WhatsAppIcon from "./_components/WhatsAppIcon";
 
 // Dynamically import MainGallery
 const MainGallery = dynamic(() => import("./_components/MainGallery"), {
@@ -24,7 +23,6 @@ export default function Home() {
       <MainGallery title="Gallery" />
       <MainGallery title="Our Doctors" />
       <OurServices />
-      <WhatsAppIcon />
     </div>
   );
 }
