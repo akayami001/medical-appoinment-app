@@ -5,7 +5,6 @@ import OurServices from "./_components/OurServices";
 import Gallery from "./_components/Gallery";
 import Testimonials from "./_components/Testimonials";
 import BeforeAfterComponent from "./_components/BeforeAfterComponent";
-import WhatsAppIcon from "./_components/WhatsAppIcon";
 
 export default function Home() {
   return (
@@ -17,7 +16,7 @@ export default function Home() {
       <Testimonials />
       <Gallery />
       <OurServices />
-      <WhatsAppIcon/>
+      
     </div>
   );
 }
