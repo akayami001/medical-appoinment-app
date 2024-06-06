@@ -6,7 +6,6 @@ import Testimonials from "./_components/Testimonials";
 import BeforeAfterComponent from "./_components/BeforeAfterComponent";
 import Categories from "./categories/page";
 
-// Dynamically import MainGallery
 const MainGallery = dynamic(() => import("./_components/MainGallery"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
