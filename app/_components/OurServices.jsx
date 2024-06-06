@@ -23,13 +23,13 @@ const OurServices = async () => {
             <div key={index} className="flex flex-col text-center mx-auto">
               <Image
                 className=" transition ease-in-out delay-150 border rounded-full aspect-square object-cover hover:-translate-y-1  hover:border-4 hover:border-primary hover:scale-110 duration-300"
-                src={item.attributes?.image?.data.attributes?.url}
+                src={item?.attributes?.image?.data?.attributes?.url}
                 width={180}
                 height={180}
-                alt={item.attributes.name}
+                alt={item?.attributes?.name}
               />
               <h2 className=" text-primary text-lg pt-4">
-                {item.attributes.name}
+                {item?.attributes?.name}
               </h2>
             </div>
           ))}

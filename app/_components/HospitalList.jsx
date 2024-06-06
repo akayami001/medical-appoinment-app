@@ -13,9 +13,9 @@ const HospitalList = async () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
         {data &&
-          data.map((hospital, i) => (
+          data.map((hospital) => (
             <Link
-              href={"/search/"}
+              href={`/hospitals/${hospital.id}`}
               key={hospital.id}
               className="flex flex-col text-center justify-center items-center p-5 bg-blue-50 m-2 rounded-lg gap-10 hover:scale-110 transition-all ease-in-out"
             >
@@ -32,26 +32,28 @@ const HospitalList = async () => {
                 />
                 <div className="mt-4 md:mt-6 lg:mt-8">
                   <div className="flex flex-wrap">
-                    {hospital.attributes.departments.data.map(
+                    {hospital.attributes?.departments?.data?.map(
                       (department, i) => (
                         <h2
                           key={i}
                           className="text-xs bg-blue-100 p-1 rounded-full px-2 text-primary mr-2"
                         >
-                          {department.attributes.name}
+                          {department?.attributes?.name}
                         </h2>
                       )
                     )}
                   </div>
                   <h2 className="font-bold text-lg">
-                    {hospital.attributes.name}
+                    {hospital?.attributes?.name}
                   </h2>
                   <div className="flex flex-wrap">
-                    {hospital.attributes.locations.data.map((location, i) => (
-                      <h2 key={i} className="text-primary text-sm pe-2">
-                        {location.attributes.location}
-                      </h2>
-                    ))}
+                    {hospital?.attributes?.locations?.data?.map(
+                      (location, i) => (
+                        <h2 key={i} className="text-primary text-sm pe-2">
+                          {location?.attributes?.location}
+                        </h2>
+                      )
+                    )}
                   </div>
                 </div>
               </div>

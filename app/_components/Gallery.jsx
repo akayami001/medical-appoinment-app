@@ -12,7 +12,7 @@ import { getGallery } from "../_utils/GlobalApi";
 const Gallery = async () => {
   const data = await getGallery();
   return (
-    <div className="mx-auto w-4/5 max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <div className="mx-auto w-4/5 max-w-screen-xl px-5 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-lg text-center">
         <h2 className="text-3xl font-bold sm:text-4xl">
           Our <span className=" text-primary">Gallery</span>
@@ -49,7 +49,7 @@ const Gallery = async () => {
                           <Image
                             className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
-                            src={item.attributes?.image?.data.attributes?.url}
+                            src={item.attributes?.image?.data?.attributes?.url}
                             alt={item.attributes?.name}
                             width={500}
                             height={500}
@@ -64,7 +64,9 @@ const Gallery = async () => {
                             height={900}
                           >
                             <source
-                              src={item.attributes?.image?.data.attributes?.url}
+                              src={
+                                item.attributes?.image?.data?.attributes?.url
+                              }
                               type="video/mp4"
                             />
                           </video>
