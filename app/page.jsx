@@ -19,7 +19,7 @@ export default function Home() {
       <HospitalList />
       <BeforeAfterComponent />
       <Testimonials />
-      <MainGallery title="Gallery" />
+      <MainGallery title="Our Gallery" />
       <MainGallery title="Our Doctors" />
       <OurServices />
     </div>
