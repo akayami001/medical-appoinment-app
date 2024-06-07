@@ -8,14 +8,14 @@ const HospitalList = async () => {
     <div className="container mx-auto p-8 mb-10">
       <h2 className="text-3xl font-bold sm:text-4xl text-center">
         Our
-        <span className="text-primary pl-2">Hospitals</span>
+        <span className="text-primary pl-2 ">Hospitals</span>
       </h2>
       <div className="flex flex-wrap gap-7 justify-center">
         {data &&
           data.map((hospital, i) => (
             <div
               key={hospital?.attributes?.name}
-              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8  md:w-60 lg:w-full max-w-96   hover:scale-110 transition-all ease-in-out"
+              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8  md:w-60 lg:w-full max-w-96   hover:scale-110 hover:mt-5 transition-all ease-in-out"
             >
               <Image
                 src={hospital?.attributes?.image?.data?.attributes?.url}
