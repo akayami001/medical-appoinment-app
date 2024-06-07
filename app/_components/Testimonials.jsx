@@ -5,18 +5,18 @@ const Testimonials = async () => {
   const data = await getTestimonials();
 
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Read trusted reviews from our customers
-        </h2>
+    <div className="mx-auto max-w-screen-xl px-5 py-12">
+      <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+        Read Trusted Reviews From Our Customers
+      </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-          {data.map((item) => (
-            <blockquote
-              key={item.id}
-              className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8"
-            >
+      <div className="mt-8 flex flex-wrap justify-center gap-2">
+        {data.map((item) => (
+          <blockquote
+            key={item.id}
+            className="w-full md:w-full lg:w-80 px-4 mb-8"
+          >
+            <div className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 h-full ">
               <div className="flex items-center gap-4">
                 <Image
                   alt=""
@@ -50,9 +50,9 @@ const Testimonials = async () => {
               <p className="mt-4 text-gray-700 text-justify">
                 {item?.attributes?.content}
               </p>
-            </blockquote>
-          ))}
-        </div>
+            </div>
+          </blockquote>
+        ))}
       </div>
     </div>
   );
