@@ -34,7 +34,6 @@ const Hero = () => {
               phoneNumber="+491783739057"
               message="Hi there! I have a question..."
             />
-            <Button className="mt-10 ml-10">Refer&Earn</Button>
           </div>
         </div>
       </div>
