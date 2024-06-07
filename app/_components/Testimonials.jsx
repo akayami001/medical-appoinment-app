@@ -7,7 +7,7 @@ const Testimonials = async () => {
   return (
     <div className="mx-auto max-w-screen-xl px-5 py-12">
       <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Read trusted reviews from our customers
+        Read Trusted Reviews From Our Customers
       </h2>
 
       <div className="mt-8 flex flex-wrap justify-center gap-2">
