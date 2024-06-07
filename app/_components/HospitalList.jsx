@@ -15,14 +15,14 @@ const HospitalList = async () => {
           data.map((hospital, i) => (
             <div
               key={hospital?.attributes?.name}
-              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96   hover:scale-110 transition-all ease-in-out"
+              className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8  md:w-60 lg:w-full max-w-96   hover:scale-110 transition-all ease-in-out"
             >
               <Image
                 src={hospital?.attributes?.image?.data?.attributes?.url}
                 alt={hospital?.attributes?.name}
                 width={500}
                 height={500}
-                className="w-full h-48 object-top md:h-64  object-fit  rounded-t-lg"
+                className="h-48 lg:h-60 object-top object-fit  rounded-t-lg"
               />
 
               <div className="mt-4 md:mt-6 lg:mt-8">
