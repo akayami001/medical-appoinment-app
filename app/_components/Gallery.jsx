@@ -13,7 +13,7 @@ const Gallery = ({ data, title, description }) => {
     <div className="mx-auto w-4/5 max-w-screen-xl px-5 py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-lg text-center">
         <h2 className="text-3xl font-bold sm:text-4xl">
-          <span className=" text-primary">{title}</span>
+          Our <span className=" text-primary">{title}</span>
         </h2>
         <p className="mt-4 text-gray-600">
           {description
@@ -43,19 +43,19 @@ const Gallery = ({ data, title, description }) => {
                             className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
                             src={
-                              title === "Our Gallery"
+                              title === "Gallery"
                                 ? item.attributes?.image?.data?.attributes?.url
                                 : item.image
                             }
                             alt={
-                              title === "Our Gallery"
+                              title === "Gallery"
                                 ? item.attributes?.name
                                 : item.name
                             }
                             width={500}
                             height={500}
                           />
-                          {title === "Our Doctors" && (
+                          {title === "Doctors" && (
                             <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center p-2">
                               <h3 className="text-lg font-semibold">
                                 {item.name}
