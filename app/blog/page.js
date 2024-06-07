@@ -6,11 +6,11 @@ const Blog = async () => {
   const data = await getBlogs();
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-wrap items-center w-2/3">
+      <div className="flex flex-wrap items-center">
         {data.map((post) => (
           <div
             key={post?.id}
-            className="flex flex-wrap overflow-hidden rounded-lg shadow transition hover:shadow-lg p-8 justify-center flex-col items-center w-80 h-122 mx-auto"
+            className="flex flex-wrap overflow-hidden rounded-lg shadow transition hover:shadow-lg p-8 justify-center flex-col items-center w-96 h-122 mx-auto"
           >
             <Image
               src={post?.attributes?.BlogImage?.data?.attributes?.url}

@@ -8,7 +8,7 @@ const BlogDetails = async ({ params }) => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-full max-w-md">
+      <div className="w-1/2">
         <div className="overflow-hidden rounded-lg shadow transition hover:shadow-lg flex flex-col items-center justify-center p-4">
           <Image
             alt={attributes?.BlogTitle}
