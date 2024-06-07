@@ -11,26 +11,33 @@ const Categories = async () => {
         Our <span className=" text-primary">Treatments</span>
       </h2>
       <div className="flex flex-wrap justify-center gap-5">
-        {data.map((item) => (
-          <Link
-            href={"/search/" + item.attributes.name}
-            key={item.id}
-            className=" w-60 bg-blue-50 rounded-lg overflow-hidden shadow-lg py-8 hover:scale-110 transition-all ease-in-out"
-          >
-            <div className=" w-52 h-52 relative mx-auto ">
-              <Image
-                src={item.attributes?.icon?.data?.attributes?.url}
-                alt="icon"
-                fill
-                className=" object-cover aspect-square"
-              />
-            </div>
+        {data.map((item) => {
+          const iconUrl = item.attributes.icon.data[0]?.attributes?.url;
+          const mediaUrl = item.attributes.media.data[0]?.attributes?.formats?.small?.url;
 
-            <p className="text-primary text-sm text-center pt-11">
-              {item.attributes.name}
-            </p>
-          </Link>
-        ))}
+          return (
+            <Link
+              href={"/search/" + item.attributes.name}
+              key={item.id}
+              className=" w-60 bg-blue-50 rounded-lg overflow-hidden shadow-lg py-8 hover:scale-110 transition-all ease-in-out"
+            >
+              <div className=" w-52 h-52 relative mx-auto ">
+                {iconUrl && (
+                  <Image
+                    src={iconUrl}
+                    alt={item.attributes.name + " icon"}
+                    fill
+                    className=" object-cover aspect-square"
+                  />
+                )}
+              </div>
+
+              <p className="text-primary text-sm text-center pt-11">
+                {item.attributes.name}
+              </p>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

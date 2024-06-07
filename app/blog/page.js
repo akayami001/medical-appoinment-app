@@ -10,7 +10,7 @@ const Blog = async () => {
         {data.map((post) => (
           <div
             key={post?.id}
-            className="flex flex-wrap overflow-hidden rounded-lg shadow transition hover:shadow-lg p-8 justify-center flex-col items-center w-96 h-122 mx-auto"
+            className="flex flex-wrap overflow-hidden rounded-lg shadow transition hover:shadow-lg p-8 justify-center items-center w-96 h-122 mx-auto"
           >
             <Image
               src={post?.attributes?.BlogImage?.data?.attributes?.url}
