@@ -19,8 +19,8 @@ export default function Home() {
       <HospitalList />
       <BeforeAfterComponent />
       <Testimonials />
-      <MainGallery title="Our Gallery" />
-      <MainGallery title="Our Doctors" />
+      <MainGallery title="Gallery" />
+      <MainGallery title="Doctors" />
       <OurServices />
     </div>
   );
