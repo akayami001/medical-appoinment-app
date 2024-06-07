@@ -4,7 +4,7 @@ import MainGallery from "../_components/MainGallery";
 const page = () => {
   return (
     <div>
-      <MainGallery title="Gallery" />
+      <MainGallery title="Our Gallery" />
     </div>
   );
 };

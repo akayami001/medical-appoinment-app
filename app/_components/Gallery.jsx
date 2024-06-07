@@ -43,12 +43,12 @@ const Gallery = ({ data, title, description }) => {
                             className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
                             key={item.id}
                             src={
-                              title === "Gallery"
+                              title === "Our Gallery"
                                 ? item.attributes?.image?.data?.attributes?.url
                                 : item.image
                             }
                             alt={
-                              title === "Gallery"
+                              title === "Our Gallery"
                                 ? item.attributes?.name
                                 : item.name
                             }

@@ -7,7 +7,7 @@ const MainGallery = async ({ title }) => {
   const galleryData = await getGallery();
   return (
     <div>
-      {title == "Gallery" ? (
+      {title == "Our Gallery" ? (
         <Gallery data={galleryData} title={title} />
       ) : (
         <Gallery data={ourDoctorsData} title={title} description=" " />
