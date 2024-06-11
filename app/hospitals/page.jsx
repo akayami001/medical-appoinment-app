@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getHospitals } from "../_utils/GlobalApi"; 
+import { getHospitals } from "../_utils/GlobalApi";
 import Link from "next/link";
 
 const HospitalList = async () => {
@@ -32,23 +32,24 @@ const HospitalList = async () => {
                 />
                 <div className="mt-4 md:mt-6 lg:mt-8">
                   <div className="flex flex-wrap">
-                    {hospital.attributes.departments.data.map(
-                      (department) => (
-                        <h2
-                          key={department.id}
-                          className="text-xs bg-blue-100 p-1 rounded-full px-2 text-primary mr-2"
-                        >
-                          {department.attributes.name}
-                        </h2>
-                      )
-                    )}
+                    {hospital.attributes.departments.data.map((department) => (
+                      <h2
+                        key={department.id}
+                        className="text-xs bg-blue-100 p-1 rounded-full px-2 text-primary mr-2"
+                      >
+                        {department.attributes.name}
+                      </h2>
+                    ))}
                   </div>
                   <h2 className="font-bold text-lg">
                     {hospital.attributes.name}
                   </h2>
                   <div className="flex flex-wrap">
                     {hospital.attributes.locations.data.map((location) => (
-                      <h2 key={location.id} className="text-primary text-sm pe-2">
+                      <h2
+                        key={location.id}
+                        className="text-primary text-sm pe-2"
+                      >
                         {location.attributes.location}
                       </h2>
                     ))}
