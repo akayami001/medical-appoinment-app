@@ -11,7 +11,7 @@ const HospitalList = async () => {
         Our
         <span className="text-primary pl-2">Hospitals</span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
+      <div className="flex flex-wrap gap-7 justify-center">
         {data &&
           data.map((hospital) => (
             <Link
