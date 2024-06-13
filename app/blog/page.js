@@ -5,8 +5,8 @@ import { getBlogs } from "../_utils/GlobalApi";
 const Blog = async () => {
   const data = await getBlogs();
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-wrap items-center">
+    <div className="flex justify-center items-center max-w-screen-xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div className="flex flex-wrap items-center gap-5">
         {data.map((post) => (
           <div
             key={post?.id}
