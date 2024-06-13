@@ -62,6 +62,14 @@ const getBlogById = async (id) => {
   return data.data;
 };
 
+const createInquri = async (inquriData) => {
+  const data = await fetchData("/inquries", {
+    method: "POST",
+    body: JSON.stringify(inquriData),
+  });
+  return data.data;
+};
+
 export {
   getCategories,
   getHospitals,
@@ -70,4 +78,5 @@ export {
   getTestimonials,
   getBlogs,
   getBlogById,
+  createInquri,
 };
