@@ -1,10 +1,15 @@
 import dynamic from "next/dynamic";
 import Hero from "./_components/Hero";
-import Categories from "./_components/Categories";
 import HospitalList from "./hospitals/page";
 import OurServices from "./_components/OurServices";
 import Testimonials from "./_components/Testimonials";
 import BeforeAfterComponent from "./_components/BeforeAfterComponent";
+import Categories from "./categories/page";
+
+const MainGallery = dynamic(() => import("./_components/MainGallery"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
 
 const MainGallery = dynamic(() => import("./_components/MainGallery"), {
   ssr: false,
