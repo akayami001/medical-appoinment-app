@@ -33,7 +33,7 @@ const page = () => {
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
-              Welcome to our health clinic, where your well-being is our
+              Welcome to our health clinic webpage, where your well-being is our
               priority.
             </p>
             <div>
