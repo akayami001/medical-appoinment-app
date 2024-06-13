@@ -21,35 +21,46 @@ const CategoryDetail = async ({ params }) => {
 
   return (
     <div className="flex justify-center flex-col items-center">
-      <div className="flex justify-center items-center h-128 header-bg-color bg-curved">
-        <div className="text-white w-1/3 p-2">
-          <h1 className="text-5xl mb-4">{categoryName}</h1>
+      <div className="flex flex-col md:flex-row justify-center items-center header-bg-color bg-curved">
+        <div className="text-white p-2 sm:w-1/3">
+          <h1 className="text-4xl mb-4">{categoryName}</h1>
           <p className="text-xl">{nameText}</p>
         </div>
-        <div className="bg-white  rounded-lg shadow-lg mt-12 w-1/3 flex h-128">
+        <div className="bg-white  rounded-lg shadow-lg mt-12 sm:w-1/3 sm:w-1/1 flex">
           <div className="w-2/3 p-8">
             <h2 className="text-2xl font-bold mb-4">Get a Free Consultation</h2>
             <form className="space-y-4">
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="fullName"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Full Name
                 </label>
-                <input id="fullName"
+                <input
+                  id="fullName"
                   type="text"
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-8"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Email
                 </label>
-                <input id="email"
+                <input
+                  id="email"
                   type="email"
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-8"
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Phone
                 </label>
                 <div className="flex mt-1 rounded-md shadow-sm">
@@ -64,13 +75,17 @@ const CategoryDetail = async ({ params }) => {
                 </div>
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700"
+                >
                   Your message...
                 </label>
-                <textarea className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  overflow-y-scroll resize-none "
-                rows="4"
-                id="message"
-                placeholder="Enter any additional information or concerns "
+                <textarea
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  overflow-y-scroll resize-none "
+                  rows="4"
+                  id="message"
+                  placeholder="Enter any additional information or concerns "
                 ></textarea>
               </div>
               <div>
@@ -93,10 +108,10 @@ const CategoryDetail = async ({ params }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-1/2 justify-center items-center mt-12">
+      <div className="flex flex-col sm:w-1/2 justify-center items-center mt-12">
         <div className="mt-8">
-          <h3 className="text-3xl font-semibold text-gray-900">Overview</h3>
-          <p className="mt-2 text-md text-gray-600">{obenText}</p>
+          <h3 className="text-3xl m-2 text-gray-900">Overview</h3>
+          <p className="m-2 text-md text-gray-600">{obenText}</p>
         </div>
         <div className="mt-8">
           <div className="flex flex-wrap">
@@ -110,7 +125,7 @@ const CategoryDetail = async ({ params }) => {
           </div>
         </div>
         <div className="mt-8">
-          <p className="my-4 text-md text-gray-600">{underText}</p>
+          <p className="m-4 text-md text-gray-600">{underText}</p>
         </div>
       </div>
     </div>
