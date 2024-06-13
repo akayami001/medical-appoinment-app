@@ -32,7 +32,7 @@ const getCategories = async () => {
   return data.data;
 };
 
-const getCategoriesId = async (id) => {
+const getCategoryById = async (id) => {
   const data = await fetchData(`/categories/${id}?populate=*`);
   return data.data;
 };
@@ -75,5 +75,5 @@ export {
   getTestimonials,
   getBlogs,
   getBlogById,
-  getCategoriesId,
+  getCategoryById,
 };

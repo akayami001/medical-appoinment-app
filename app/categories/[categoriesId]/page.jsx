@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { getCategoriesId } from "@/app/_utils/GlobalApi";
+import { getCategoryById } from "@/app/_utils/GlobalApi";
 
 const CategoryDetail = async ({ params }) => {
   const { categoriesId } = params;
-  const data = await getCategoriesId(categoriesId);
+  const data = await getCategoryById(categoriesId);
 
   if (!data) {
     return <div>Loading...</div>;
@@ -31,25 +31,25 @@ const CategoryDetail = async ({ params }) => {
             <h2 className="text-2xl font-bold mb-4">Get a Free Consultation</h2>
             <form className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Name Surname
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+                  Full Name
                 </label>
-                <input
+                <input id="fullName"
                   type="text"
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-8"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email
                 </label>
-                <input
+                <input id="email"
                   type="email"
                   className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-8"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                   Phone
                 </label>
                 <div className="flex mt-1 rounded-md shadow-sm">
@@ -57,16 +57,21 @@ const CategoryDetail = async ({ params }) => {
                     🇺🇸
                   </span>
                   <input
-                    type="text"
+                    type="tel"
+                    id="phone"
                     className="flex-1 block w-full min-w-0 border border-gray-300 rounded-none rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-8"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                   Your message...
                 </label>
-                <textarea className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm h-12"></textarea>
+                <textarea className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  overflow-y-scroll resize-none "
+                rows="4"
+                id="message"
+                placeholder="Enter any additional information or concerns "
+                ></textarea>
               </div>
               <div>
                 <button
