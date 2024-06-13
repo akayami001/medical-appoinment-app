@@ -11,11 +11,6 @@ const MainGallery = dynamic(() => import("./_components/MainGallery"), {
   loading: () => <p>Loading...</p>,
 });
 
-const MainGallery = dynamic(() => import("./_components/MainGallery"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
-
 export default function Home() {
   return (
     <div>
