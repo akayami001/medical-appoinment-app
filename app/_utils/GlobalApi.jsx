@@ -32,6 +32,11 @@ const getCategories = async () => {
   return data.data;
 };
 
+const getCategoryById = async (id) => {
+  const data = await fetchData(`/categories/${id}?populate=*`);
+  return data.data;
+};
+
 const getHospitals = async () => {
   const data = await fetchData("/hospitals?populate=*");
   return data.data;
@@ -70,4 +75,5 @@ export {
   getTestimonials,
   getBlogs,
   getBlogById,
+  getCategoryById,
 };

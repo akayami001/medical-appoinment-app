@@ -1,10 +1,10 @@
 import React from "react";
-import Gallery from "../_components/Gallery";
+import MainGallery from "../_components/MainGallery";
 
 const page = () => {
   return (
     <div>
-      <Gallery />
+      <MainGallery title="Gallery" />
     </div>
   );
 };
