@@ -17,14 +17,17 @@ const OurServices = async () => {
         </p>
       </div>
       <div className="mt-8 flex justify-center flex-wrap gap-5">
-        {data.map((item, index) => (
-          <div key={index} className="flex flex-col text-center mx-auto">
+        {data.map((item) => (
+          <div key={item.id} className="flex flex-col text-center mx-auto">
             <Image
               className=" transition ease-in-out delay-150 border rounded-full aspect-square object-cover hover:-translate-y-1  hover:border-4 hover:border-primary hover:scale-110 duration-300"
               src={item?.attributes?.image?.data?.attributes?.url}
               width={180}
               height={180}
               alt={item?.attributes?.name}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPvd7POQAAAABJRU5ErkJggg=="
+              loading="lazy"
             />
             <h2 className=" text-primary text-lg pt-4">
               {item?.attributes?.name}
