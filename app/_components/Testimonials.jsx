@@ -24,6 +24,9 @@ const Testimonials = async () => {
                   width={100}
                   height={100}
                   className="size-14 rounded-full object-cover object-top"
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPvd7POQAAAABJRU5ErkJggg=="
+                  loading="lazy"
                 />
 
                 <div>
