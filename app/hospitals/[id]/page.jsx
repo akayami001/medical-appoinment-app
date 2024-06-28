@@ -1,19 +1,33 @@
-'use client'
+// "use client";
 import Image from "next/image";
 import Link from "next/link";
 
-import { data as hospitalData } from '@/app/_mocks_/HospitalData.js';
+import { getHospitalsById } from "@/app/_utils/GlobalApi";
 
+// export async function getStaticPaths({params}) {
+//   const {id} = params
+//   const data = await getHospitalsById(id);
+//   const paths = data.map((hospital) => ({
+//     params: { id: hospital.id.toString() },
+//   }));
+//   return { paths, fallback: false };
+// }
 
-const HospitalDetails = ({ id }) => {
-  console.log(id)
-  const hospital = hospitalData.find((h) => h.id === parseInt(id));
-  console.log(hospitalData)
-  if (!hospital) {
-    return <div>Hospital Not Found</div>;
+const HospitalDetails = async ({ params }) => {
+  const { id } = params;
+  const data = await getHospitalsById(id);
+  if (!data) {
+    return <div>Loading...</div>;
   }
 
-  const { name, overview, images, whyUs, services } = hospital;
+  const {
+    name: hospitalName,
+    overview,
+    media,
+    whyUs,
+    services,
+  } = data.attributes;
+  const mediaUrl = media?.data[0]?.attributes?.url;
 
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -21,11 +35,11 @@ const HospitalDetails = ({ id }) => {
         <div className="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="text-center ltr:sm:text-left rtl:sm:text-right">
             <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">
-            {name}
+              {hospitalName}
             </h2>
 
             <p className="hidden  text-white/70 md:mt-6 md:block md:text-lg md:leading-relaxed">
-            {overview}
+              {overview}
             </p>
 
             <div className="mt-4 sm:mt-8">
@@ -44,8 +58,8 @@ const HospitalDetails = ({ id }) => {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
               <Image
-                alt=""
-                src={images[0]}
+                alt={`${hospitalName} media`}
+                src={mediaUrl[0]}
                 width={200}
                 height={200}
                 className="absolute inset-0 h-full w-full object-cover"
@@ -65,8 +79,8 @@ const HospitalDetails = ({ id }) => {
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-first lg:h-full">
               <Image
-                alt=""
-                src={images[1]}
+                alt={`${hospitalName} media`}
+                src={mediaUrl[1]}
                 width={200}
                 height={200}
                 className="absolute inset-0 h-full w-full object-cover"
@@ -86,8 +100,8 @@ const HospitalDetails = ({ id }) => {
           <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
               <Image
-                alt=""
-                src={images[2]}
+                alt={`${hospitalName} media`}
+                src={mediaUrl[2]}
                 width={200}
                 height={200}
                 className="absolute inset-0 h-full w-full object-cover"
