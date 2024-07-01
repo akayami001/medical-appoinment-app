@@ -29,9 +29,7 @@ const OurServices = async () => {
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPvd7POQAAAABJRU5ErkJggg=="
               loading="lazy"
             />
-            <h2 className=" text-primary text-xl pt-4">
-              {item?.attributes?.name}
-            </h2>
+            <h2 className=" text-lg pt-4">{item?.attributes?.name}</h2>
           </div>
         ))}
       </div>
