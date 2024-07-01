@@ -28,7 +28,7 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#004FA8",
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -72,11 +72,11 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       height: {
-        '122': "26rem", 
-        '128': '28rem',
-        '130': "29rem",
-        '144': '36rem', 
-        '160': '40rem', 
+        122: "26rem",
+        128: "28rem",
+        130: "29rem",
+        144: "36rem",
+        160: "40rem",
       },
     },
   },

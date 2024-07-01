@@ -35,7 +35,7 @@ const HospitalList = async () => {
                     {hospital.attributes.departments.data.map((department) => (
                       <h2
                         key={department.id}
-                        className="text-xs bg-blue-100 p-1 rounded-full px-2 text-primary mr-2"
+                        className="text-xs bg-blue-100 p-1 rounded-full px-2 text-secondary mr-2"
                       >
                         {department.attributes.name}
                       </h2>
@@ -48,7 +48,7 @@ const HospitalList = async () => {
                     {hospital.attributes.locations.data.map((location) => (
                       <h2
                         key={location.id}
-                        className="text-primary text-sm pe-2"
+                        className="text-secondary text-sm pe-2"
                       >
                         {location.attributes.location}
                       </h2>

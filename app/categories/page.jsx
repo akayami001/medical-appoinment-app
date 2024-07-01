@@ -31,7 +31,7 @@ const Categories = async () => {
                 )}
               </div>
 
-              <p className="text-primary text-sm text-center pt-11">
+              <p className="text-secondary text-sm text-center pt-11">
                 {item.attributes.name}
               </p>
             </Link>
