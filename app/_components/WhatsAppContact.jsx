@@ -9,7 +9,7 @@ const WhatsAppContact = ({ phoneNumber, message }) => {
   };
 
   return (
-    <Button className="mt-10 bg-green-600" onClick={handleClick}>
+    <Button className="mt-10 bg-green-700" onClick={handleClick}>
       Start a Chat
     </Button>
   );

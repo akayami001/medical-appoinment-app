@@ -57,50 +57,50 @@ const HamburgerMenu = () => {
         </div>
         <div className="flex-col py-4">
           <ul className="text-xl">
-            <Link href="/">
-              <li
-                className="py-4 text-gray-500 transition hover:text-primary cursor-pointer"
-                onClick={() => setMenuOpen(false)}
-              >
+            <li
+              className="py-4 text-gray-500 transition hover:text-primary cursor-pointer"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Link href="/" className=" block">
                 Home
-              </li>
-            </Link>
+              </Link>
+            </li>
 
-            <Link href="/about">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="py-4 text-gray-500 transition hover:text-primary"
-              >
+            <li
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-gray-500 transition hover:text-primary"
+            >
+              <Link href="/about" className=" block">
                 About Us
-              </li>
-            </Link>
+              </Link>
+            </li>
 
-            <Link href="/gallery">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="py-4 text-gray-500 transition hover:text-primary"
-              >
+            <li
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-gray-500 transition hover:text-primary"
+            >
+              <Link href="/gallery" className=" block">
                 Gallery
-              </li>
-            </Link>
+              </Link>
+            </li>
 
-            <Link href="/blog">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="py-4 text-gray-500 transition hover:text-primary"
-              >
+            <li
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-gray-500 transition hover:text-primary"
+            >
+              <Link href="/blog" className=" block">
                 Blog
-              </li>
-            </Link>
+              </Link>
+            </li>
 
-            <Link href="/contact">
-              <li
-                onClick={() => setMenuOpen(false)}
-                className="py-4 text-gray-500 transition hover:text-primary"
-              >
+            <li
+              onClick={() => setMenuOpen(false)}
+              className="py-4 text-gray-500 transition hover:text-primary"
+            >
+              <Link href="/contact" className=" block">
                 Contact
-              </li>
-            </Link>
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="flex flex-row justify-around pt-10 items-center">
