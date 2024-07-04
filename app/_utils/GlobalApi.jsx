@@ -42,6 +42,11 @@ const getHospitals = async () => {
   return data.data;
 };
 
+const getHospitalsByName = async (name) => {
+  const data = await fetchData(`/hospitals?filters[name][$eq]=${name}&populate=*`);
+  return data.data[0];
+};
+
 const getServices = async () => {
   const data = await fetchData("/services?populate=*");
   return data.data;
@@ -76,4 +81,5 @@ export {
   getBlogs,
   getBlogById,
   getCategoryById,
+  getHospitalsByName
 };
