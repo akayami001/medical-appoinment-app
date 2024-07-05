@@ -66,12 +66,17 @@ const getBlogById = async (id) => {
   const data = await fetchData(`/blogs/${id}?populate=*`);
   return data.data;
 };
+const getDoctors = async () => {
+  const data = await fetchData("/doctors?populate=*");
+  return data.data;
+};
 
 export {
   getCategories,
   getHospitals,
   getServices,
   getGallery,
+  getDoctors,
   getTestimonials,
   getBlogs,
   getBlogById,

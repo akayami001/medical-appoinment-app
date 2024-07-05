@@ -34,33 +34,31 @@ const Gallery = ({ data, title, description }) => {
                 return (
                   <CarouselItem
                     key={item.id}
-                    className=" basis-full lg:basis-1/2 px-2 py-4 flex flex-col items-center justify-center"
+                    className={` basis-full ${
+                      title === "Doctors" ? "lg:basis-1/3 " : "lg:basis-1/2"
+                    }  px-2 py-4 flex flex-col items-center justify-center`}
                   >
                     <div className="p-1">
                       <Card>
-                        <CardContent className=" h-64 relative  md:h-96 rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
+                        <CardContent className=" h-64 x relative md:h-96 rounded transition hover:shadow-lg flex flex-col items-center justify-center p-4">
                           <Image
-                            className="h-full w-full md:object-cover rounded-t-lg mx-auto transition hover:scale-105 duration-300"
+                            className={`h-full ${
+                              title === "Doctors" ? "w-72" : "w-full"
+                            }  md:object-cover  rounded-t-lg mx-auto transition hover:scale-105 duration-300`}
                             key={item.id}
-                            src={
-                              title === "Gallery"
-                                ? item.attributes?.image?.data?.attributes?.url
-                                : item.image
-                            }
-                            alt={
-                              title === "Gallery"
-                                ? item.attributes?.name
-                                : item.name
-                            }
+                            src={item.attributes?.image?.data?.attributes?.url}
+                            alt={item.attributes?.name}
                             width={500}
                             height={500}
                           />
                           {title === "Doctors" && (
                             <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center p-2">
                               <h3 className="text-lg font-semibold">
-                                {item.name}
+                                {item.attributes?.name}
                               </h3>
-                              <p className="text-sm">{item.fields}</p>
+                              <p className="text-sm">
+                                {item.attributes?.fields}
+                              </p>
                             </div>
                           )}
 
