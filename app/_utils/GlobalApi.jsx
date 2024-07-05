@@ -70,6 +70,10 @@ const getDoctors = async () => {
   const data = await fetchData("/doctors?populate=*");
   return data.data;
 };
+const getLogo = async () => {
+  const data = await fetchData("/logos?populate=*");
+  return data.data;
+};
 
 export {
   getCategories,
@@ -81,4 +85,5 @@ export {
   getBlogs,
   getBlogById,
   getCategoryById,
+  getLogo,
 };
