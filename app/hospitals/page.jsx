@@ -13,9 +13,11 @@ const HospitalList = async () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-7 justify-center">
         {data &&
-          data.map((hospital) => (
+          data?.map((hospital) => (
             <Link
-              href={`/hospitals/${hospital.id}`}
+              href={`/hospitals/${encodeURIComponent(
+                hospital.attributes.name
+              )}`}
               key={hospital.id}
               className="flex flex-col text-center justify-center items-center p-5 bg-blue-50 m-2 rounded-lg gap-10 hover:scale-110 transition-all ease-in-out"
             >
@@ -24,7 +26,7 @@ const HospitalList = async () => {
                 className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96"
               >
                 <Image
-                  src={hospital.attributes.image.data.attributes.url}
+                  src={hospital.attributes.image?.data?.attributes?.url}
                   alt={hospital.attributes.name}
                   width={500}
                   height={200}
