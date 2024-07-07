@@ -13,11 +13,10 @@ const Categories = async () => {
       <div className="flex flex-wrap justify-center gap-5">
         {data.map((item) => {
           const iconUrl = item.attributes.icon.data[0]?.attributes?.url;
-          const mediaUrl = item.attributes.media.data[0]?.attributes?.formats?.small?.url;
 
           return (
             <Link
-              href={"/search/" + item.attributes.name}
+              href={`/categories/${item.id}`}
               key={item.id}
               className=" w-60 bg-blue-50 rounded-lg overflow-hidden shadow-lg py-8 hover:scale-110 transition-all ease-in-out"
             >
@@ -25,7 +24,7 @@ const Categories = async () => {
                 {iconUrl && (
                   <Image
                     src={iconUrl}
-                    alt={item.attributes.name + " icon"}
+                    alt={`${item.attributes.name} icon`}
                     fill
                     className=" object-cover aspect-square"
                   />

@@ -64,6 +64,12 @@
       --input: 0 0% 14.9%;
       --ring: 0 0% 83.1%;
     }
+    .bg-curved {
+      border-radius: 0% 0% 100% 100% / 10% 10%;
+    }
+    .header-bg-color{
+      background-color: rgba(0, 88, 135, 1);
+    }
   }
 
   @layer base {

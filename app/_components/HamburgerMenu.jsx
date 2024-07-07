@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ logoData }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNav = () => {
@@ -162,7 +162,7 @@ const HamburgerMenu = () => {
           </a>
         </div>
         <Image
-          src="/healthclinicturkey-high-resolution-logo-transparent.png"
+          src={logoData[0].attributes?.logo?.data?.attributes?.url}
           alt="Health Clinic Turkey Logo"
           width={205}
           height={75}
