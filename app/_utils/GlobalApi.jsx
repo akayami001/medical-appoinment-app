@@ -90,6 +90,6 @@ export {
   getBlogs,
   getBlogById,
   getCategoryById,
-  getHospitalsByName
-  getLogo,
+  getHospitalsByName,
+  getLogo
 };
