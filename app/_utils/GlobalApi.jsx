@@ -48,6 +48,11 @@ const getHospitalsById = async (id) => {
   return data.data;
 };
 
+const getHospitalsByName = async (name) => {
+  const data = await fetchData(`/hospitals?filters[name][$eq]=${name}&populate=*`);
+  return data.data[0];
+};
+
 const getServices = async () => {
   const data = await fetchData("/services?populate=*");
   return data.data;
@@ -72,15 +77,26 @@ const getBlogById = async (id) => {
   const data = await fetchData(`/blogs/${id}?populate=*`);
   return data.data;
 };
+const getDoctors = async () => {
+  const data = await fetchData("/doctors?populate=*");
+  return data.data;
+};
+const getLogo = async () => {
+  const data = await fetchData("/logos?populate=*");
+  return data.data;
+};
 
 export {
   getCategories,
   getHospitals,
   getServices,
   getGallery,
+  getDoctors,
   getTestimonials,
   getBlogs,
   getBlogById,
   getCategoryById,
-  getHospitalsById
+  getHospitalsById,
+  getHospitalsByName,
+  getLogo
 };
