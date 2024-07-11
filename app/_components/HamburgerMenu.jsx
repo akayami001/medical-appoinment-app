@@ -161,13 +161,15 @@ const HamburgerMenu = ({ logoData }) => {
             </svg>
           </a>
         </div>
-        <Image
-          src={logoData[0].attributes?.logo?.data?.attributes?.url}
-          alt="Health Clinic Turkey Logo"
-          width={205}
-          height={75}
-          className="cursor-pointer h-42 pt-12"
-        />
+        {logoData[0] && (
+          <Image
+            src={logoData[0].attributes?.logo?.data?.attributes?.url}
+            alt="Health Clinic Turkey Logo"
+            width={205}
+            height={75}
+            className="cursor-pointer h-42 pt-12"
+          />
+        )}
       </div>
     </div>
   );
