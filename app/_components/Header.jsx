@@ -9,16 +9,18 @@ const Header = async () => {
   return (
     <header className="bg-white">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 justify-between">
-        <Link className="block text-teal-600" href="./">
-          <span className="sr-only">Home</span>
-          <Image
-            src={logoData[0].attributes?.logo?.data?.attributes?.url}
-            alt="Health Clinic Turkey Logo"
-            width={300}
-            height={100}
-            className="h-42"
-          />
-        </Link>
+        {logoData[0] && (
+          <Link className="block text-teal-600" href="./">
+            <span className="sr-only">Home</span>
+            <Image
+              src={logoData[0].attributes?.logo?.data?.attributes?.url}
+              alt="Health Clinic Turkey Logo"
+              width={300}
+              height={100}
+              className="h-42"
+            />
+          </Link>
+        )}
 
         <div className="flex items-center">
           <nav aria-label="Global" className="hidden md:block">

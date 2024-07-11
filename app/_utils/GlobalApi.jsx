@@ -79,6 +79,10 @@ const getLogo = async () => {
   const data = await fetchData("/logos?populate=*");
   return data.data;
 };
+const getBeforeAfter = async () => {
+  const data = await fetchData("/before-afters?populate=*");
+  return data.data;
+};
 
 export {
   getCategories,
@@ -91,5 +95,6 @@ export {
   getBlogById,
   getCategoryById,
   getHospitalsByName,
-  getLogo
+  getLogo,
+  getBeforeAfter
 };
