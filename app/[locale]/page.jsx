@@ -23,7 +23,8 @@ const OurServices = dynamic(() => import("./_components/OurServices"), {
   loading: () => <p>Loading...</p>
 });
 
-export default function Home() {
+export default function Page() {
+
   return (
     <div>
       <Hero />

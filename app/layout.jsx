@@ -1,8 +1,8 @@
 import { Roboto } from "next/font/google";
-import "./globals.css";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
-import WhatsAppIcon from "./_components/WhatsAppIcon";
+import "./[locale]/globals.css";
+import Header from "./[locale]/_components/Header";
+import Footer from "./[locale]/_components/Footer";
+import WhatsAppIcon from "./[locale]/_components/WhatsAppIcon";
 
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 

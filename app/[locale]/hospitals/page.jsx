@@ -1,21 +1,25 @@
 import Image from "next/image";
 import { getHospitals } from "../_utils/GlobalApi";
 import Link from "next/link";
+import { getI18n } from "@/locales/server";
 
 const HospitalList = async () => {
   const data = await getHospitals();
+  const t = await getI18n();
 
   return (
     <div className="container mx-auto p-8 mb-10">
       <h2 className="text-3xl font-bold sm:text-4xl text-center">
-        Our
-        <span className="text-primary pl-2 ">Hospitals</span>
+        {t("ourHospitalsTitle")}
+        <span className="text-primary pl-2">{t("hospitalsSubtitle")}</span>
       </h2>
-      <div className="flex flex-wrap gap-7 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 justify-center">
         {data &&
           data.map((hospital) => (
             <Link
-              href={`/hospitals/${hospital.id}`}
+              href={`/hospitals/${encodeURIComponent(
+                hospital.attributes.name
+              )}`}
               key={hospital.id}
               className="flex flex-col text-center justify-center items-center p-5 bg-blue-50 m-2 rounded-lg gap-10 hover:scale-110 transition-all ease-in-out"
             >
@@ -24,7 +28,7 @@ const HospitalList = async () => {
                 className="bg-white shadow-md rounded-lg p-4 md:p-6 lg:p-8 max-w-96"
               >
                 <Image
-                  src={hospital.attributes.image.data.attributes.url}
+                  src={hospital.attributes.image?.data?.attributes?.url}
                   alt={hospital.attributes.name}
                   width={500}
                   height={200}

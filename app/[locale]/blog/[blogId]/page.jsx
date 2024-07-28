@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getBlogById } from "@/app/_utils/GlobalApi";
+import { getBlogById } from "../../_utils/GlobalApi";
 
 const BlogDetails = async ({ params }) => {
   const { blogId } = params;

@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getLogo } from "../_utils/GlobalApi";
+import { getI18n } from "@/locales/server";
 
 const Footer = async () => {
   const logoData = await getLogo();
+  const t = await getI18n();
+
   return (
     <footer className="bg-gray-100">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -19,7 +22,7 @@ const Footer = async () => {
         )}
 
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-          Your Health, Our Priority - Experience Excellence in Medical Tourism.
+          {t("yourHealth")}
         </p>
 
         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
@@ -28,7 +31,7 @@ const Footer = async () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="/about"
             >
-              About
+              {t("about")}
             </Link>
           </li>
 
@@ -37,7 +40,7 @@ const Footer = async () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="/blog"
             >
-              Blog
+              {t("blog")}
             </Link>
           </li>
 
@@ -46,7 +49,7 @@ const Footer = async () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="/contact"
             >
-              Contact
+              {t("contact")}
             </Link>
           </li>
         </ul>
@@ -100,7 +103,7 @@ const Footer = async () => {
         </ul>
       </div>
       <p className="ml-2 text-xs">
-        Authorized by the Ministry of Health and Tourism in Turkey
+        {t("authorizedBy")}
       </p>
     </footer>
   );

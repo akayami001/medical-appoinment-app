@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getHospitalsByName } from "@/app/_utils/GlobalApi";
+import { getHospitalsByName } from "../../_utils/GlobalApi";
+import { getI18n } from "@/locales/server";
 
 const HospitalDetails = async ({ params }) => {
   const hospital = await getHospitalsByName(params?.name);
   const { attributes } = hospital;
   const imageUrl = attributes.image.data.attributes.formats.large.url;
+  const t = await getI18n();
 
   const getImageUrl = (imageArray) => {
     if (imageArray && imageArray.length > 0) {
@@ -43,7 +45,7 @@ const HospitalDetails = async ({ params }) => {
                 href="/contact"
                 className="inline-block rounded-md bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-primary/90 focus:outline-none focus:ring"
               >
-                Contact Us
+                {t("contactUs")}
               </Link>
             </div>
           </div>
@@ -64,7 +66,7 @@ const HospitalDetails = async ({ params }) => {
             )}
           </div>
           <div className="lg:w-1/2 p-4 lg:pl-8 lg:order-first">
-            <h2 className="text-3xl font-bold sm:text-4xl">Overview</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">{t("overviewTitle")}</h2>
             <p className="mt-4 text-gray-600">{attributes.overview}</p>
           </div>
         </div>
@@ -84,7 +86,7 @@ const HospitalDetails = async ({ params }) => {
             )}
           </div>
           <div className="lg:w-1/2 p-4">
-            <h2 className="text-3xl font-bold sm:text-4xl">Our Vision</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">{t("visionTitle")}</h2>
             <p className="mt-4 text-gray-600">{attributes.vision}</p>
           </div>
         </div>
@@ -104,7 +106,7 @@ const HospitalDetails = async ({ params }) => {
             )}
           </div>
           <div className="lg:w-1/2 p-4 lg:pl-8 lg:order-first">
-            <h2 className="text-3xl font-bold sm:text-4xl">Our Mission</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">{t("missionTitle")}</h2>
             <p className="mt-4 text-gray-600">{attributes.mission}</p>
           </div>
         </div>
@@ -124,7 +126,7 @@ const HospitalDetails = async ({ params }) => {
             )}
           </div>
           <div className="lg:w-1/2 p-4">
-            <h2 className="text-3xl font-bold sm:text-4xl">Our Services</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl">{t("servicesTitle")}</h2>
             {attributes.departments.data.map((department) => (
               <h2
                 key={department.id}

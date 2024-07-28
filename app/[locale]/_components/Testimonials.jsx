@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { getTestimonials } from "../_utils/GlobalApi";
+import { getI18n } from "@/locales/server";
 
 const Testimonials = async () => {
   const data = await getTestimonials();
+  const t = await getI18n();
 
   return (
     <div className="mx-auto max-w-screen-xl px-5 py-12">
       <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Read Trusted Reviews From Our Customers
+        {t("testimonials")}
       </h2>
 
       <div className="mt-8 flex flex-wrap justify-center gap-2">

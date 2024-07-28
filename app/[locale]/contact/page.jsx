@@ -3,12 +3,15 @@ import Image from "next/image";
 import GoogleMap from "../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { getI18n } from "@/locales/server";
 
-const page = () => {
+const Page = async () => {
+  const t = await getI18n();
+
   return (
     <div className="px-5 lg:py-16">
       <section className="bg-white max-w-screen-xl mx-auto lg:flex lg:flex-row lg:justify-around lg:items-center lg:h-screen lg:max-h-[620px] ">
-        <section className="relative flex items-end h-32 lg:h-full  bg-gray-900 ">
+        <section className="relative flex items-end h-32 lg:h-full bg-gray-900">
           <Image
             alt="hospital-call"
             fill
@@ -29,27 +32,26 @@ const page = () => {
             </Link>
 
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              Welcome to Health Services 🩺
+              {t("welcomeMessage")}
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
-              Welcome to our health clinic webpage, where your well-being is our
-              priority.
+              {t("welcomeDescription")}
             </p>
             <div>
               <div className="mt-4 leading-relaxed text-white/90">
                 <a className="flex" href="tel:+">
-                  <MapPin className="mr-1" /> London
+                  <MapPin className="mr-1" /> {t("locationLabel")}
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
                 <a className="flex" href="tel:+">
-                  <PhoneCall className="mr-1" /> 0850 480 20 48
+                  <PhoneCall className="mr-1" /> {t("phoneNumberLabel")}
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
                 <a className="flex" href="mailto:">
-                  <AtSign className="mr-1" /> info@healthclinicturkiye.com
+                  <AtSign className="mr-1" /> {t("emailAddressLabel")}
                 </a>
               </div>
             </div>
@@ -77,57 +79,60 @@ const page = () => {
             </Link>
           </div>
           <div className="rounded-lg bg-white shadow-lg max-w-lg p-5 mx-auto">
-            <h2 className="text-xl pb-5">Contact Form</h2>
+            <h2 className="text-xl pb-5">{t("contactFormTitle")}</h2>
             <form action="#" className="space-y-4">
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="name"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="name"
                 >
-                  Full Name<span className=" text-red-600">*</span>
+                  {t("fullNameLabel")}
+                  <span className="text-red-600">*</span>
                 </label>
                 <input
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
-                  placeholder="Enter your full name"
+                  placeholder={t("fullNameLabel")}
                 />
               </div>
 
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="email"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="email"
                 >
-                  Email<span className=" text-red-600">*</span>
+                  {t("emailLabel")}
+                  <span className="text-red-600">*</span>
                 </label>
                 <input
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="email"
-                  placeholder="Enter your email"
+                  placeholder={t("emailLabel")}
                 />
               </div>
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="phone"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="phone"
                 >
-                  Phone<span className=" text-red-600">*</span>
+                  {t("phoneLabel")}
+                  <span className="text-red-600">*</span>
                 </label>
 
                 <input
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="tel"
                   id="phone"
-                  placeholder="Enter your phone number"
+                  placeholder={t("phoneLabel")}
                 />
               </div>
 
               <fieldset>
                 <legend className="block text-gray-600 text-sm font-bold mb-2">
-                  Treatments
-                  <span className=" text-red-600">*</span>
+                  {t("treatmentsLegend")}
+                  <span className="text-red-600">*</span>
                 </legend>
                 <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                   <div>
@@ -191,21 +196,21 @@ const page = () => {
 
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="phone"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="note"
                 >
-                  Note
+                  {t("noteLabel")}
                 </label>
 
                 <textarea
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
                   rows="4"
-                  id="message"
-                  placeholder="Enter any additional information or concerns "
+                  id="note"
+                  placeholder={t("placeholderMessage")}
                 ></textarea>
               </div>
               <Button className="w-full" type="submit">
-                Send Enquiry
+                {t("sendEnquiryButton")}
               </Button>
             </form>
           </div>
@@ -218,4 +223,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

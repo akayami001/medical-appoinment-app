@@ -1,8 +1,10 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import WhatsAppContact from "./WhatsAppContact";
+import { getI18n } from "@/locales/server";
 
-const Hero = () => {
+const Hero = async () => {
+  const t = await getI18n();
+
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -19,16 +21,15 @@ const Hero = () => {
 
           <div className="lg:py-24">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Find & Book
+              {t("findBook")}
               <span className="text-primary">
-                Top-Notch Patient Experience in Turkiye!
+                {t("topNotchExperience")}
               </span>
-              &<span className="text-primary pl-2">Stay at the Pinnacle!</span>
+               &<span className="text-primary pl-2">{t("stayPinnacle")}</span>
             </h2>
 
             <p className="mt-4 text-gray-600">
-              Revolutionary facilities, expert professionals, and bespoke care
-              redefine the pinnacle of healthcare excellence.
+              {t("revolutionaryFacilities")}
             </p>
             <WhatsAppContact
               phoneNumber="+491783739057"

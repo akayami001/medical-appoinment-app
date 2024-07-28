@@ -1,9 +1,11 @@
 import Image from "next/image";
-import { getCategoryById } from "@/app/_utils/GlobalApi";
+import { getI18n } from "@/locales/server";
+import { getCategoryById } from "../../_utils/GlobalApi";
 
 const CategoryDetail = async ({ params }) => {
   const { categoriesId } = params;
   const data = await getCategoryById(categoriesId);
+  const t = await getI18n();
 
   if (!data) {
     return <div>Loading...</div>;
@@ -26,16 +28,18 @@ const CategoryDetail = async ({ params }) => {
           <h1 className="text-4xl mb-4">{categoryName}</h1>
           <p className="text-xl">{nameText}</p>
         </div>
-        <div className="bg-white  rounded-lg shadow-lg mt-12 sm:w-1/3 sm:w-1/1 flex">
+        <div className="bg-white rounded-lg shadow-lg mt-12 sm:w-1/3 sm:w-1/1 flex">
           <div className="w-2/3 p-8">
-            <h2 className="text-2xl font-bold mb-4">Get a Free Consultation</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {t("getFreeConsultation")}
+            </h2>
             <form className="space-y-4">
               <div>
                 <label
                   htmlFor="fullName"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Full Name
+                  {t("fullName")}
                 </label>
                 <input
                   id="fullName"
@@ -48,7 +52,7 @@ const CategoryDetail = async ({ params }) => {
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Email
+                  {t("email")}
                 </label>
                 <input
                   id="email"
@@ -61,7 +65,7 @@ const CategoryDetail = async ({ params }) => {
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Phone
+                  {t("phone")}
                 </label>
                 <div className="flex mt-1 rounded-md shadow-sm">
                   <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
@@ -79,13 +83,13 @@ const CategoryDetail = async ({ params }) => {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Your message...
+                  {t("message")}
                 </label>
                 <textarea
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm  overflow-y-scroll resize-none "
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm overflow-y-scroll resize-none"
                   rows="4"
                   id="message"
-                  placeholder="Enter any additional information or concerns "
+                  placeholder={t("placeholderMessage")}
                 ></textarea>
               </div>
               <div>
@@ -110,7 +114,7 @@ const CategoryDetail = async ({ params }) => {
       </div>
       <div className="flex flex-col sm:w-1/2 justify-center items-center mt-12">
         <div className="mt-8">
-          <h3 className="text-3xl m-2 text-gray-900">Overview</h3>
+          <h3 className="text-3xl m-2 text-gray-900">{t("overview")}</h3>
           <p className="m-2 text-md text-gray-600">{obenText}</p>
         </div>
         <div className="mt-8">
