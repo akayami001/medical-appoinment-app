@@ -58,4 +58,5 @@ export default {
   internalServerError: "Internal Server Error",
   errorApology: "We apologize for the inconvenience. Please try again later.",
   tryAgain: "Try Again",
+  aboutText:"Our health clinic is one of the Medicinity companies. Like the other businesses within Medicinity, our health clinic aims to be a successful and high-quality solution partner in the healthcare tourism industry."
 };

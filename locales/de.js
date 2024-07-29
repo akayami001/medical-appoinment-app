@@ -58,4 +58,5 @@ export default {
   internalServerError: "Interner Serverfehler",
   errorApology: "Wir entschuldigen uns für die Unannehmlichkeiten. Bitte versuchen Sie es später erneut.",
   tryAgain: "Erneut versuchen",
+  aboutText: "Unsere Gesundheitsklinik ist eines der Unternehmen von Medicinity. Wie die anderen Unternehmen innerhalb von Medicinity, zielt unsere Gesundheitsklinik darauf ab, ein erfolgreicher und hochwertiger Lösungspartner in der Gesundheitstourismusbranche zu sein."
 };
