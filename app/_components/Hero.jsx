@@ -31,7 +31,7 @@ const Hero = () => {
               redefine the pinnacle of healthcare excellence.
             </p>
             <WhatsAppContact
-              phoneNumber="+491783739057"
+              phoneNumber="+908504802048"
               message="Hi there! I have a question..."
             />
           </div>
