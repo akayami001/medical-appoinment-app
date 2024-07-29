@@ -32,9 +32,19 @@ const getCategories = async () => {
   return data.data;
 };
 
+const getCategoryById = async (id) => {
+  const data = await fetchData(`/categories/${id}?populate=*`);
+  return data.data;
+};
+
 const getHospitals = async () => {
   const data = await fetchData("/hospitals?populate=*");
   return data.data;
+};
+
+const getHospitalsByName = async (name) => {
+  const data = await fetchData(`/hospitals?filters[name][$eq]=${name}&populate=*`);
+  return data.data[0];
 };
 
 const getServices = async () => {
@@ -61,6 +71,18 @@ const getBlogById = async (id) => {
   const data = await fetchData(`/blogs/${id}?populate=*`);
   return data.data;
 };
+const getDoctors = async () => {
+  const data = await fetchData("/doctors?populate=*");
+  return data.data;
+};
+const getLogo = async () => {
+  const data = await fetchData("/logos?populate=*");
+  return data.data;
+};
+const getBeforeAfter = async () => {
+  const data = await fetchData("/before-afters?populate=*");
+  return data.data;
+};
 
 const createInquri = async (inquriData) => {
   const data = await fetchData("/inquries", {
@@ -75,8 +97,13 @@ export {
   getHospitals,
   getServices,
   getGallery,
+  getDoctors,
   getTestimonials,
   getBlogs,
   getBlogById,
   createInquri,
+  getCategoryById,
+  getHospitalsByName,
+  getLogo,
+  getBeforeAfter
 };
