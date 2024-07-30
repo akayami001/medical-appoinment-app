@@ -1,12 +1,45 @@
+"use client";
 import { AtSign, MapPin, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import GoogleMap from "../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { getI18n } from "@/locales/server";
+import { useState } from "react";
+import { createInquri } from "../_utils/GlobalApi";
 
-const Page = async () => {
-  const t = await getI18n();
+const Page = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    treatment: "",
+    note: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const createdInquri = await createInquri({ data: formData });
+      setSuccess("Enquiry created successfully!");
+    } catch (error) {
+      setError("Error creating enquiry.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="px-5 lg:py-16">
@@ -79,8 +112,8 @@ const Page = async () => {
             </Link>
           </div>
           <div className="rounded-lg bg-white shadow-lg max-w-lg p-5 mx-auto">
-            <h2 className="text-xl pb-5">{t("contactFormTitle")}</h2>
-            <form action="#" className="space-y-4">
+            <h2 className="text-xl pb-5">Contact Form</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
                   className="block text-gray-600 text-sm font-bold mb-2"
@@ -93,7 +126,11 @@ const Page = async () => {
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
-                  placeholder={t("fullNameLabel")}
+                  name="fullName"
+                  placeholder="Enter your full name"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -109,7 +146,11 @@ const Page = async () => {
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="email"
-                  placeholder={t("emailLabel")}
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div>
@@ -120,12 +161,15 @@ const Page = async () => {
                   {t("phoneLabel")}
                   <span className="text-red-600">*</span>
                 </label>
-
                 <input
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="tel"
                   id="phone"
-                  placeholder={t("phoneLabel")}
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -146,10 +190,12 @@ const Page = async () => {
                         className="sr-only"
                         id="hairTransplant"
                         type="radio"
-                        tabIndex="-1"
                         name="option"
+                        value="hairTransplant"
+                        checked={(formData.treatment = "hairTransplant")}
+                        // onChange={handleChange}
+                        tabIndex="-1"
                       />
-
                       <span className="text-sm"> Hair Transplant </span>
                     </label>
                   </div>
@@ -165,10 +211,12 @@ const Page = async () => {
                         className="sr-only"
                         id="dentalCare"
                         type="radio"
-                        tabIndex="-1"
                         name="option"
+                        value="dentalCare"
+                        checked={(formData.treatment = "dentalCare")}
+                        onChange={handleChange}
+                        tabIndex="-1"
                       />
-
                       <span className="text-sm"> Dental Care </span>
                     </label>
                   </div>
@@ -177,17 +225,19 @@ const Page = async () => {
                     <label
                       htmlFor="plasticSurgery"
                       className="block w-full cursor-pointer rounded-lg border 
-                        bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
+                         bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
                       tabIndex="0"
                     >
                       <input
                         className="sr-only"
                         id="plasticSurgery"
                         type="radio"
-                        tabIndex="-1"
                         name="option"
+                        value="plasticSurgery"
+                        checked={(formData.treatment = "plasticSurgery")}
+                        onChange={handleChange}
+                        tabIndex="-1"
                       />
-
                       <span className="text-sm"> Plastic Surgery </span>
                     </label>
                   </div>
@@ -206,13 +256,18 @@ const Page = async () => {
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
                   rows="4"
                   id="note"
-                  placeholder={t("placeholderMessage")}
+                  name="note"
+                  placeholder="Enter any additional information or concerns"
+                  value={formData.note}
+                  onChange={handleChange}
                 ></textarea>
               </div>
-              <Button className="w-full" type="submit">
-                {t("sendEnquiryButton")}
+              <Button className="w-full" type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Enquiry"}
               </Button>
             </form>
+            {error && <p className="text-red-600 mt-4">{error}</p>}
+            {success && <p className="text-green-600 mt-4">{success}</p>}
           </div>
         </main>
       </section>
