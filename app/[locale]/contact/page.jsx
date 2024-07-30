@@ -30,7 +30,7 @@ const Page = () => {
     setLoading(true);
     setError(null);
     setSuccess(null);
-    console.log("formdata:", formData);
+
     try {
       const createdInquri = await createInquri({ data: formData });
       setSuccess("Enquiry created successfully!");
@@ -73,18 +73,18 @@ const Page = () => {
             </p>
             <div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="tel:+">
-                  <MapPin className="mr-1" /> {t("locationLabel")}
+                <a className="flex">
+                  <MapPin className="mr-1" /> London
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="tel:+">
-                  <PhoneCall className="mr-1" /> {t("phoneNumberLabel")}
+                <a className="flex" href="tel:+908504802048">
+                  <PhoneCall className="mr-1" /> +90 850 480 20 48
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="mailto:">
-                  <AtSign className="mr-1" /> {t("emailAddressLabel")}
+                <a className="flex" href="mailto:info@healthclinicturkiye.com">
+                  <AtSign className="mr-1" /> info@healthclinicturkiye.com
                 </a>
               </div>
             </div>
@@ -121,14 +121,11 @@ const Page = () => {
             </p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-8 grid grid-cols-6 gap-6 p-4"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="col-span-6">
               <label
                 htmlFor="fullName"
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-600 text-sm font-bold mb-2"
               >
                 Full Name
                 <span className=" text-red-600">*</span>
@@ -141,14 +138,15 @@ const Page = () => {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your full name"
               />
             </div>
 
             <div className="col-span-6">
               <label
                 htmlFor="email"
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-600 text-sm font-bold mb-2"
               >
                 Email
                 <span className=" text-red-600">*</span>
@@ -161,14 +159,15 @@ const Page = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your email"
               />
             </div>
 
             <div className="col-span-6">
               <label
                 htmlFor="phone"
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-gray-600 text-sm font-bold mb-2"
               >
                 Phone
                 <span className=" text-red-600">*</span>
@@ -181,7 +180,8 @@ const Page = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your phone number"
               />
             </div>
 
@@ -261,7 +261,7 @@ const Page = () => {
                 htmlFor="note"
                 className="block text-gray-700 text-sm font-bold mb-2"
               >
-                Note
+                Message:
               </label>
 
               <textarea
@@ -269,12 +269,14 @@ const Page = () => {
                 name="note"
                 value={formData.note}
                 onChange={handleChange}
-                className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                rows="4"
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
+                placeholder="Enter any additional information or concerns"
               ></textarea>
             </div>
 
             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <Button type="submit" disabled={loading}>
+              <Button className="w-full" type="submit" disabled={loading}>
                 {loading ? "Loading..." : "Send Enquiry"}
               </Button>
 

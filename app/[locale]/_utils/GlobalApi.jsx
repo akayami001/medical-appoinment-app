@@ -84,33 +84,11 @@ const getBeforeAfter = async () => {
   return data.data;
 };
 
-const postData = async (endpoint, data, options = {}) => {
-  const defaultOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify(data),
-  };
-
-  const finalOptions = { ...defaultOptions, ...options };
-  const url = `${BASE_URL}${endpoint}`;
-
-  try {
-    const res = await fetch(url, finalOptions);
-    if (!res.ok) {
-      throw new Error(`Error: ${res.status} ${res.statusText}`);
-    }
-    const result = await res.json();
-    return result;
-  } catch (error) {
-    console.error("Post error:", error);
-    throw error;
-  }
-};
 const createInquri = async (inquriData) => {
-  const data = await postData("/inquries", inquriData);
+  const data = await fetchData("/inquries", {
+    method: "POST",
+    body: JSON.stringify(inquriData),
+  });
   return data.data;
 };
 
