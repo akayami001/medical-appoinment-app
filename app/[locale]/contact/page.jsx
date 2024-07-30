@@ -29,7 +29,8 @@ const page = () => {
             </Link>
 
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              {t("welcomeMessage")}
+              {/* {t("welcomeMessage")} */}
+              Welcome to Health Services 🩺
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
@@ -121,7 +122,8 @@ const page = () => {
             <div className="col-span-6">
               <fieldset>
                 <legend className="block text-gray-600 text-sm font-bold mb-2">
-                  {t("treatmentsLegend")}
+                  {/* {t("treatmentsLegend")} */}
+                  Treatments
                   <span className="text-red-600">*</span>
                 </legend>
                 <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
