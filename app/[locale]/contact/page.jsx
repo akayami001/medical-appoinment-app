@@ -30,7 +30,7 @@ const Page = () => {
     setLoading(true);
     setError(null);
     setSuccess(null);
-
+    console.log("formdata:", formData);
     try {
       const createdInquri = await createInquri({ data: formData });
       setSuccess("Enquiry created successfully!");
