@@ -2,6 +2,7 @@
 
 // import { useI18n } from "@/locales/client";
 import { useEffect } from "react";
+import { useI18n } from "@/locales/client";
 
 export default function Error({ error, reset }) {
   // const { t } = useI18n();

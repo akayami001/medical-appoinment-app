@@ -1,14 +1,50 @@
+"use client";
 import { AtSign, MapPin, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import GoogleMap from "../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
+import { createInquri } from "../_utils/GlobalApi";
 
-const page = () => {
+const Page = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    treatment: "",
+    note: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const createdInquri = await createInquri({ data: formData });
+      setSuccess("Enquiry created successfully!");
+    } catch (error) {
+      setError("Error creating enquiry.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="px-5 lg:py-16">
       <section className="bg-white max-w-screen-xl mx-auto lg:flex lg:flex-row lg:justify-around lg:items-center lg:h-screen lg:max-h-[620px] ">
-        <section className="relative flex items-end h-32 lg:h-full  bg-gray-900 ">
+        <section className="relative flex items-end h-32 lg:h-full bg-gray-900">
           <Image
             alt="hospital-call"
             fill
@@ -29,27 +65,26 @@ const page = () => {
             </Link>
 
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              {/* {t("welcomeMessage")} */}
               Welcome to Health Services 🩺
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
-              Welcome to our health clinic, where your well-being is our
+              Welcome to our health clinic webpage, where your well-being is our
               priority.
             </p>
             <div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="tel:+">
+                <a className="flex">
                   <MapPin className="mr-1" /> London
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="tel:+">
-                  <PhoneCall className="mr-1" /> 0850 480 20 48
+                <a className="flex" href="tel:+908504802048">
+                  <PhoneCall className="mr-1" /> +90 850 480 20 48
                 </a>
               </div>
               <div className="mt-4 leading-relaxed text-white/90">
-                <a className="flex" href="mailto:">
+                <a className="flex" href="mailto:info@healthclinicturkiye.com">
                   <AtSign className="mr-1" /> info@healthclinicturkiye.com
                 </a>
               </div>
@@ -68,13 +103,17 @@ const page = () => {
                 <span className=" text-red-600">*</span>
               </label>
 
-                <input
-                  className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                  type="tel"
-                  id="phone"
-                  placeholder="Enter your phone number"
-                />
-              </div>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter your full name"
+              />
+            </div>
 
             <div className="col-span-6">
               <label
@@ -122,26 +161,27 @@ const page = () => {
             <div className="col-span-6">
               <fieldset>
                 <legend className="block text-gray-600 text-sm font-bold mb-2">
-                  {/* {t("treatmentsLegend")} */}
                   Treatments
-                  <span className="text-red-600">*</span>
+                  <span className=" text-red-600">*</span>
                 </legend>
+
                 <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                   <div>
                     <label
                       htmlFor="hairTransplant"
-                      className="block w-full cursor-pointer rounded-lg border 
-                        bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
+                      className="block w-full cursor-pointer rounded-lg border bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
                       tabIndex="0"
                     >
                       <input
                         className="sr-only"
                         id="hairTransplant"
                         type="radio"
+                        name="treatment"
+                        value="hairTransplant"
+                        checked={formData.treatment === "hairTransplant"}
+                        onChange={handleChange}
                         tabIndex="-1"
-                        name="option"
                       />
-
                       <span className="text-sm"> Hair Transplant </span>
                     </label>
                   </div>
@@ -149,18 +189,19 @@ const page = () => {
                   <div>
                     <label
                       htmlFor="dentalCare"
-                      className="block w-full cursor-pointer rounded-lg border 
-                        bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
+                      className="block w-full cursor-pointer rounded-lg border bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
                       tabIndex="0"
                     >
                       <input
                         className="sr-only"
                         id="dentalCare"
                         type="radio"
+                        name="treatment"
+                        value="dentalCare"
+                        checked={formData.treatment === "dentalCare"}
+                        onChange={handleChange}
                         tabIndex="-1"
-                        name="option"
                       />
-
                       <span className="text-sm"> Dental Care </span>
                     </label>
                   </div>
@@ -168,23 +209,25 @@ const page = () => {
                   <div>
                     <label
                       htmlFor="plasticSurgery"
-                      className="block w-full cursor-pointer rounded-lg border 
-                        bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
+                      className="block w-full cursor-pointer rounded-lg border bg-primary border-gray-200 p-3 text-white hover:border-gray has-[:checked]:border-destructive has-[:checked]:bg-destructive has-[:checked]:text-white"
                       tabIndex="0"
                     >
                       <input
                         className="sr-only"
                         id="plasticSurgery"
                         type="radio"
+                        name="treatment"
+                        value="plasticSurgery"
+                        checked={formData.treatment === "plasticSurgery"}
+                        onChange={handleChange}
                         tabIndex="-1"
-                        name="option"
                       />
-
                       <span className="text-sm"> Plastic Surgery </span>
                     </label>
                   </div>
                 </div>
               </fieldset>
+            </div>
 
             <div className="col-span-6">
               <label
@@ -195,23 +238,35 @@ const page = () => {
 
               </label>
 
-                <textarea
-                  className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
-                  rows="4"
-                  id="message"
-                  placeholder="Enter any additional information or concerns "
-                ></textarea>
-              </div>
-              <Button className="w-full" type="submit">
-                Send Enquiry
+              <textarea
+                id="note"
+                name="note"
+                value={formData.note}
+                onChange={handleChange}
+                rows="4"
+                className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
+                placeholder="Enter any additional information or concerns"
+              ></textarea>
+            </div>
+
+            <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <Button className="w-full" type="submit" disabled={loading}>
+                {loading ? "Loading..." : "Send Enquiry"}
               </Button>
-            </form>
-          </div>
+
+              {success && (
+                <p className="mt-4 text-sm text-green-600 sm:mt-0">{success}</p>
+              )}
+              {error && (
+                <p className="mt-4 text-sm text-red-600 sm:mt-0">{error}</p>
+              )}
+            </div>
+          </form>
         </main>
       </section>
-      <div>
+      <section className="max-w-screen-xl mx-auto">
         <GoogleMap />
-      </div>
+      </section>
     </div>
 
     
