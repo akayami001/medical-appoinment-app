@@ -1,13 +1,16 @@
 "use client";
 import { AtSign, MapPin, PhoneCall } from "lucide-react";
 import Image from "next/image";
-import GoogleMap from "../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
-import { createInquri } from "../_utils/GlobalApi";
+import { createInquri } from "../../_utils/GlobalApi";
+import GoogleMap from "../../_components/GoogleMap";
+import { useI18n } from "@/locales/client";
 
 const Page = () => {
+  const t = useI18n();
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -65,12 +68,11 @@ const Page = () => {
             </Link>
 
             <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              Welcome to Health Services 🩺
+              {t("welcomeMessage")}
             </h2>
 
             <p className="mt-4 leading-relaxed text-white/90">
-              Welcome to our health clinic webpage, where your well-being is our
-              priority.
+              {t("welcomeDescription")}
             </p>
             <div>
               <div className="mt-4 leading-relaxed text-white/90">
@@ -111,7 +113,7 @@ const Page = () => {
                 onChange={handleChange}
                 required
                 className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Enter your full name"
+                placeholder={t("placeholderName")}
               />
             </div>
 
@@ -132,7 +134,7 @@ const Page = () => {
                 onChange={handleChange}
                 required
                 className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Enter your email"
+                placeholder={t("placeholderMail")}
               />
             </div>
 
@@ -154,14 +156,14 @@ const Page = () => {
                 onChange={handleChange}
                 required
                 className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                placeholder="Enter your phone number"
+                placeholder={t("placeholderPhone")}
               />
             </div>
 
             <div className="col-span-6">
               <fieldset>
                 <legend className="block text-gray-600 text-sm font-bold mb-2">
-                  Treatments
+                  {t("treatmentsLegend")}
                   <span className=" text-red-600">*</span>
                 </legend>
 
@@ -245,13 +247,13 @@ const Page = () => {
                 onChange={handleChange}
                 rows="4"
                 className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline overflow-y-scroll resize-none"
-                placeholder="Enter any additional information or concerns"
+                placeholder={t("placeholderMessage")}
               ></textarea>
             </div>
 
             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
               <Button className="w-full" type="submit" disabled={loading}>
-                {loading ? "Loading..." : "Send Enquiry"}
+                {loading ? "Loading..." : t("sendEnquiryButton")}
               </Button>
 
               {success && (

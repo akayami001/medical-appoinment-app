@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getLogo } from "../_utils/GlobalApi";
 import { getI18n } from "@/locales/server";

@@ -1,7 +1,7 @@
 "use client";
 import { AtSign, MapPin, PhoneCall } from "lucide-react";
 import Image from "next/image";
-import GoogleMap from "../_components/GoogleMap";
+import GoogleMap from "../../_components/GoogleMap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
@@ -338,6 +338,5 @@ const Page = () => {
     // </section>
   );
 };
-
 
 export default page;

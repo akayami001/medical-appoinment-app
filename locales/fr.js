@@ -36,6 +36,9 @@ export default {
     message: "Votre message...",
     overview: "Aperçu",
     placeholderMessage: "Entrez toute information supplémentaire ou préoccupation",
+    placeholderName: "Entrez votre nom complet",
+    placeholderMail: "Entrez votre Email",
+    placeholderPhone: "Entrez votre numéro de téléphone",
     contactFormTitle: "Formulaire de contact",
     fullNameLabel: "Nom complet",
     emailLabel: "E-mail",
@@ -58,6 +61,7 @@ export default {
     internalServerError: "Erreur interne du serveur",
     errorApology: "Nous nous excusons pour le désagrément. Veuillez réessayer plus tard.",
     tryAgain: "Réessayez",
-    aboutText: "Notre clinique de santé fait partie des entreprises Medicinity. Comme les autres entreprises de Medicinity, notre clinique de santé vise à être un partenaire de solution réussi et de haute qualité dans l'industrie du tourisme de santé."
+    aboutText: "Notre clinique de santé fait partie des entreprises Medicinity. Comme les autres entreprises de Medicinity, notre clinique de santé vise à être un partenaire de solution réussi et de haute qualité dans l'industrie du tourisme de santé.",
+    startChat: "Démarrer un chat",
   };
   

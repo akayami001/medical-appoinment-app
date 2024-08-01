@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "../_components/HamburgerMenu";
 import { getLogo } from "../_utils/GlobalApi";
 import { getI18n } from "@/locales/server";
+import LanguageHeader from "@/app/LanguageHeader";
 
 const Header = async () => {
   const logoData = await getLogo();
@@ -61,37 +62,14 @@ const Header = async () => {
               <li>
                 <Link
                   className="text-gray-500 transition hover:text-primary"
-                  href="/contact"
+                  href="/client/contact"
                 >
                   {t("contact")}
                 </Link>
               </li>
-              <li>
-                <Link
-                  className="text-primary transition hover:text-primary"
-                  href="/en"
-                >
-                    EN 🇬🇧 
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-primary transition hover:text-primary"
-                  href="/de"
-                >
-                  DE 🇩🇪
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-primary transition hover:text-primary"
-                  href="/fr"
-                >
-                  FR 🇫🇷
-                </Link>
-              </li>
             </ul>
           </nav>
+          <LanguageHeader />
           <HamburgerMenu logoData={logoData} />
         </div>
       </div>
