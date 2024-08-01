@@ -328,4 +328,8 @@ const Page = () => {
   );
 };
 
+<<<<<<< HEAD
 export default page;
+=======
+export default page;
+>>>>>>> f603531 (in contact conflict fixed3)
