@@ -113,11 +113,11 @@ const Page = () => {
           </div>
           <div className="rounded-lg bg-white shadow-lg max-w-lg p-5 mx-auto">
             <h2 className="text-xl pb-5">Contact Form</h2>
-            <form action="#" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="name"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="name"
                 >
                   Full Name<span className=" text-red-600">*</span>
                 </label>
@@ -125,14 +125,18 @@ const Page = () => {
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
+                  name="fullName"
                   placeholder="Enter your full name"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="email"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="email"
                 >
                   Email<span className=" text-red-600">*</span>
                 </label>
@@ -140,22 +144,29 @@ const Page = () => {
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div>
                 <label
-                  class="block text-gray-600 text-sm font-bold mb-2"
-                  for="phone"
+                  className="block text-gray-600 text-sm font-bold mb-2"
+                  htmlFor="phone"
                 >
                   Phone<span className=" text-red-600">*</span>
                 </label>
-
                 <input
                   className="shadow appearance-none border rounded-lg w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                   type="tel"
                   id="phone"
+                  name="phone"
                   placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -328,8 +339,5 @@ const Page = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default page;
-=======
-export default page;
->>>>>>> f603531 (in contact conflict fixed3)
