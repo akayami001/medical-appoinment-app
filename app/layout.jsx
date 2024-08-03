@@ -1,8 +1,8 @@
 import { Roboto } from "next/font/google";
-import "./globals.css";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
-import WhatsAppIcon from "./_components/WhatsAppIcon";
+import "./[locale]/globals.css";
+import Header from "./[locale]/client/Header";
+import WhatsAppIcon from "./[locale]/_components/WhatsAppIcon";
+import Footer from "./[locale]/_components/Footer";
 
 const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <Header />
         {children}
-        <WhatsAppIcon/>
+        <WhatsAppIcon />
         <Footer />
       </body>
     </html>
